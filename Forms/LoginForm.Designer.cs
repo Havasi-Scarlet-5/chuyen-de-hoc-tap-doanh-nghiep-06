@@ -49,6 +49,7 @@
             this.titleLabel.Font = new System.Drawing.Font("Times New Roman", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Gold;
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(1262, 128);
             this.titleLabel.TabIndex = 0;
@@ -70,16 +71,18 @@
             this.loginPanel.Controls.Add(this.passwordTextBox);
             this.loginPanel.Controls.Add(this.accountTextBox);
             this.loginPanel.Controls.Add(this.loginTitleLabel);
-            this.loginPanel.Location = new System.Drawing.Point(384, 232);
+            this.loginPanel.Location = new System.Drawing.Point(384, 233);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(512, 256);
+            this.loginPanel.Size = new System.Drawing.Size(511, 256);
             this.loginPanel.TabIndex = 1;
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(275, 182);
+            this.registerButton.Location = new System.Drawing.Point(273, 182);
+            this.registerButton.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(130, 54);
+            this.registerButton.Size = new System.Drawing.Size(129, 54);
             this.registerButton.TabIndex = 8;
             this.registerButton.Text = "Đăng ký";
             this.registerButton.UseVisualStyleBackColor = true;
@@ -87,9 +90,10 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(118, 182);
+            this.loginButton.Location = new System.Drawing.Point(119, 182);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(130, 54);
+            this.loginButton.Size = new System.Drawing.Size(129, 54);
             this.loginButton.TabIndex = 7;
             this.loginButton.Text = "Đăng nhập";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -97,9 +101,10 @@
             // 
             // forgetPasswordLinkLabel
             // 
-            this.forgetPasswordLinkLabel.Location = new System.Drawing.Point(325, 156);
+            this.forgetPasswordLinkLabel.Location = new System.Drawing.Point(327, 156);
+            this.forgetPasswordLinkLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.forgetPasswordLinkLabel.Name = "forgetPasswordLinkLabel";
-            this.forgetPasswordLinkLabel.Size = new System.Drawing.Size(125, 20);
+            this.forgetPasswordLinkLabel.Size = new System.Drawing.Size(127, 20);
             this.forgetPasswordLinkLabel.TabIndex = 6;
             this.forgetPasswordLinkLabel.TabStop = true;
             this.forgetPasswordLinkLabel.Text = "Quên mật khẩu?";
@@ -109,7 +114,8 @@
             // rememberAccountCheckBox
             // 
             this.rememberAccountCheckBox.AutoSize = true;
-            this.rememberAccountCheckBox.Location = new System.Drawing.Point(163, 156);
+            this.rememberAccountCheckBox.Location = new System.Drawing.Point(161, 156);
+            this.rememberAccountCheckBox.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.rememberAccountCheckBox.Name = "rememberAccountCheckBox";
             this.rememberAccountCheckBox.Size = new System.Drawing.Size(156, 20);
             this.rememberAccountCheckBox.TabIndex = 5;
@@ -120,9 +126,10 @@
             // passwordLabel
             // 
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(57, 127);
+            this.passwordLabel.Location = new System.Drawing.Point(36, 127);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(100, 22);
+            this.passwordLabel.Size = new System.Drawing.Size(121, 22);
             this.passwordLabel.TabIndex = 4;
             this.passwordLabel.Text = "Mật khẩu";
             this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,27 +137,30 @@
             // accountLabel
             // 
             this.accountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountLabel.Location = new System.Drawing.Point(57, 99);
+            this.accountLabel.Location = new System.Drawing.Point(36, 98);
+            this.accountLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.accountLabel.Name = "accountLabel";
-            this.accountLabel.Size = new System.Drawing.Size(100, 22);
+            this.accountLabel.Size = new System.Drawing.Size(121, 22);
             this.accountLabel.TabIndex = 3;
             this.accountLabel.Text = "Tên đăng nhập";
             this.accountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(163, 127);
+            this.passwordTextBox.Location = new System.Drawing.Point(161, 127);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(287, 22);
+            this.passwordTextBox.Size = new System.Drawing.Size(285, 22);
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // accountTextBox
             // 
-            this.accountTextBox.Location = new System.Drawing.Point(163, 99);
+            this.accountTextBox.Location = new System.Drawing.Point(161, 98);
+            this.accountTextBox.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.accountTextBox.Name = "accountTextBox";
-            this.accountTextBox.Size = new System.Drawing.Size(287, 22);
+            this.accountTextBox.Size = new System.Drawing.Size(285, 22);
             this.accountTextBox.TabIndex = 1;
             this.accountTextBox.TextChanged += new System.EventHandler(this.AccountTextBox_TextChanged);
             // 
@@ -160,8 +170,9 @@
             this.loginTitleLabel.Font = new System.Drawing.Font("Times New Roman", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginTitleLabel.ForeColor = System.Drawing.Color.Red;
             this.loginTitleLabel.Location = new System.Drawing.Point(0, 0);
+            this.loginTitleLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.loginTitleLabel.Name = "loginTitleLabel";
-            this.loginTitleLabel.Size = new System.Drawing.Size(512, 96);
+            this.loginTitleLabel.Size = new System.Drawing.Size(511, 96);
             this.loginTitleLabel.TabIndex = 0;
             this.loginTitleLabel.Text = "ĐĂNG NHẬP";
             this.loginTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,6 +189,7 @@
             this.Controls.Add(this.titleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

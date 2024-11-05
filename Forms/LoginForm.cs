@@ -20,13 +20,13 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void LoginForm_Load(object sender, System.EventArgs e)
         {
+            DatabaseManager.Connect();
+
             accountTextBox.Text = VALID_ACCOUNT;
 
             passwordTextBox.Text = VALID_PASSWORD;
 
             rememberAccountCheckBox.Checked = true;
-
-            Debug.WriteLine("Form loaded!");
         }
 
         private void AccountTextBox_TextChanged(object sender, System.EventArgs e)
@@ -55,15 +55,16 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         {
             if (account.Equals(VALID_ACCOUNT) && password.Equals(VALID_PASSWORD))
             {
-                MessageBox.Show("Đăng nhập thành công!", "THÀNH CÔNG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đăng nhập thành công!.", "ĐĂNG NHẬP THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormsManager.ChangeForm(this, Program.menuForm);
             }
             else
-                MessageBox.Show("Đăng nhập thất bại!\nTên tài khoản hoặc mật khẩu không chính xác.\nXin vui lòng thử lại.", "THẤT BẠI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Đăng nhập thất bại!\nTên tài khoản hoặc mật khẩu không chính xác.\nXin vui lòng thử lại.", "ĐĂNG NHẬP THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void RegisterButton_Click(object sender, System.EventArgs e)
         {
-            MessageBox.Show("Tính năng này hiện chưa có sẵn.", "CHƯA CÓ SẴN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Tính năng này hiện chưa có sẵn.", "TÍNH NĂNG CHƯA CÓ SẴN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

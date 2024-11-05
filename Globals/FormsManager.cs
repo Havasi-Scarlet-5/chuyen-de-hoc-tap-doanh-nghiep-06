@@ -6,8 +6,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
     {
         public static void ChangeForm(Form currentForm, Form newForm)
         {
-            newForm.ShowDialog();
-            currentForm.Close();
+            currentForm.Hide();
+            newForm.Show();
         }
     }
 }
