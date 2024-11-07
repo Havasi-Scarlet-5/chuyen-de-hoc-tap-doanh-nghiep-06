@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace chuyen_de_hoc_tap_doanh_nghiep_06
@@ -12,8 +12,38 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void MenuForm_Load(object sender, System.EventArgs e)
         {
+            //foreach (TabPage tabPage in tabControl1.TabPages)
+            //{
+            //    foreach (Control control in tabPage.Controls)
+            //    {
+            //        if (control is SplitContainer splitContainer)
+            //        {
+            //            ConfigureSplitContainer(splitContainer, Color.Black, 4);
+            //            splitContainer1.SplitterDistance = splitContainer1.Width / 2;
+            //        }
+            //    }
+            //}
+
             InitTables();
         }
+
+        //private void ConfigureSplitContainer(SplitContainer splitContainer, Color splitterColor, int splitterWidth)
+        //{
+        //    // Set the splitter width
+        //    splitContainer.SplitterWidth = splitterWidth;
+
+        //    // Attach the Paint event with a lambda to draw the splitter in the specified color
+        //    splitContainer.Paint += (s, e) =>
+        //    {
+        //        using (SolidBrush brush = new SolidBrush(splitterColor))
+        //        {
+        //            Rectangle splitterRect = new Rectangle(
+        //                splitContainer.SplitterDistance, 0,
+        //                splitContainer.SplitterWidth, splitContainer.Height);
+        //            e.Graphics.FillRectangle(brush, splitterRect);
+        //        }
+        //    };
+        //}
 
         private void InitTables()
         {
@@ -24,6 +54,16 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             // Nghe table
 
             UpdateNgheTable();
+
+            // MonHoc table
+
+            monHocKieuMaComboBox.Items.Add("MH");
+
+            monHocKieuMaComboBox.Items.Add("MĐ");
+
+            monHocKieuMaComboBox.SelectedIndex = 0;
+
+            UpdateMonHocTable();
         }
 
         private void UpdateKhoaTable()
@@ -93,6 +133,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             ngheDataGridView.Columns["MaKhoa"].Visible = false;
 
             ngheDataGridView.Columns["MaKhoa1"].Visible = false;
+
+            monHocNgheComboBox.DataSource = ngheDataGridView.DataSource;
+
+            monHocNgheComboBox.DisplayMember = "TenNghe";
+
+            monHocNgheComboBox.ValueMember = "MaNghe";
         }
 
         private void NgheDataGridView_SelectionChanged(object sender, System.EventArgs e)
@@ -107,7 +153,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
                 ngheMoTaRichTextBox.Text = ngheDataGridView.CurrentRow.Cells["MoTa"].Value.ToString();
 
-                ngheKhoaComboBox.SelectedValue = ngheDataGridView.CurrentRow.Cells["MaKhoa"].Value;
+                ngheKhoaComboBox.SelectedValue = ngheDataGridView.CurrentRow.Cells["MaKhoa"].Value.ToString();
             }
         }
 
@@ -139,6 +185,11 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         {
             if (DatabaseManager.XoaNghe(maNgheTextBox.Text))
                 UpdateNgheTable();
+        }
+
+        private void UpdateMonHocTable()
+        {
+
         }
     }
 }
