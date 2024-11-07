@@ -67,14 +67,6 @@
             this.monHocTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.monHocDataGridView = new System.Windows.Forms.DataGridView();
             this.monHocPanel = new System.Windows.Forms.Panel();
-            this.tabCTDT = new System.Windows.Forms.TabPage();
-            this.tabChiTietCTDT = new System.Windows.Forms.TabPage();
-            this.tabKeHoachDaoTaoTheoKhoa = new System.Windows.Forms.TabPage();
-            this.tabIconList = new System.Windows.Forms.ImageList(this.components);
-            this.monHocTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.monHocXoaButton = new System.Windows.Forms.Button();
-            this.monHocSuaButton = new System.Windows.Forms.Button();
-            this.monHocThemButton = new System.Windows.Forms.Button();
             this.monHocTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.monHocGhiChuTextBox = new System.Windows.Forms.TextBox();
             this.monHocGhiChuLabel = new System.Windows.Forms.Label();
@@ -102,6 +94,14 @@
             this.monHocSoTinChiNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.monHocTongCongLabel = new System.Windows.Forms.Label();
             this.monHocTongCongNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.monHocTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.monHocXoaButton = new System.Windows.Forms.Button();
+            this.monHocSuaButton = new System.Windows.Forms.Button();
+            this.monHocThemButton = new System.Windows.Forms.Button();
+            this.tabCTDT = new System.Windows.Forms.TabPage();
+            this.tabChiTietCTDT = new System.Windows.Forms.TabPage();
+            this.tabKeHoachDaoTaoTheoKhoa = new System.Windows.Forms.TabPage();
+            this.tabIconList = new System.Windows.Forms.ImageList(this.components);
             this.menuFormTabControl.SuspendLayout();
             this.tabKhoa.SuspendLayout();
             this.khoaTableLayoutPanel.SuspendLayout();
@@ -119,7 +119,6 @@
             this.monHocTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monHocDataGridView)).BeginInit();
             this.monHocPanel.SuspendLayout();
-            this.monHocTableLayoutPanel3.SuspendLayout();
             this.monHocTableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monHocThiHetMonNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocDinhKyNumericUpDown)).BeginInit();
@@ -129,6 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.monHocLyThuyetNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocSoTinChiNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocTongCongNumericUpDown)).BeginInit();
+            this.monHocTableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuFormTabControl
@@ -284,20 +284,23 @@
             // 
             // khoaTableLayoutPanel2
             // 
+            this.khoaTableLayoutPanel2.AutoScroll = true;
             this.khoaTableLayoutPanel2.ColumnCount = 2;
-            this.khoaTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.khoaTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.khoaTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.khoaTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.khoaTableLayoutPanel2.Controls.Add(this.maKhoaLabel, 0, 0);
             this.khoaTableLayoutPanel2.Controls.Add(this.maKhoaTextBox, 1, 0);
             this.khoaTableLayoutPanel2.Controls.Add(this.tenKhoaLabel, 0, 1);
             this.khoaTableLayoutPanel2.Controls.Add(this.tenKhoaTextBox, 1, 1);
-            this.khoaTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.khoaTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.khoaTableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.khoaTableLayoutPanel2.Name = "khoaTableLayoutPanel2";
-            this.khoaTableLayoutPanel2.RowCount = 2;
+            this.khoaTableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.khoaTableLayoutPanel2.RowCount = 3;
             this.khoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.khoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.khoaTableLayoutPanel2.Size = new System.Drawing.Size(618, 100);
+            this.khoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.khoaTableLayoutPanel2.Size = new System.Drawing.Size(618, 618);
             this.khoaTableLayoutPanel2.TabIndex = 0;
             // 
             // maKhoaLabel
@@ -308,7 +311,7 @@
             this.maKhoaLabel.ForeColor = System.Drawing.Color.Red;
             this.maKhoaLabel.Location = new System.Drawing.Point(3, 0);
             this.maKhoaLabel.Name = "maKhoaLabel";
-            this.maKhoaLabel.Size = new System.Drawing.Size(179, 50);
+            this.maKhoaLabel.Size = new System.Drawing.Size(236, 50);
             this.maKhoaLabel.TabIndex = 0;
             this.maKhoaLabel.Text = "Mã khoa:";
             this.maKhoaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -318,10 +321,10 @@
             this.maKhoaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maKhoaTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maKhoaTextBox.ForeColor = System.Drawing.Color.Red;
-            this.maKhoaTextBox.Location = new System.Drawing.Point(188, 3);
+            this.maKhoaTextBox.Location = new System.Drawing.Point(245, 3);
             this.maKhoaTextBox.MaxLength = 20;
             this.maKhoaTextBox.Name = "maKhoaTextBox";
-            this.maKhoaTextBox.Size = new System.Drawing.Size(427, 42);
+            this.maKhoaTextBox.Size = new System.Drawing.Size(358, 42);
             this.maKhoaTextBox.TabIndex = 1;
             // 
             // tenKhoaLabel
@@ -331,7 +334,7 @@
             this.tenKhoaLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tenKhoaLabel.Location = new System.Drawing.Point(3, 50);
             this.tenKhoaLabel.Name = "tenKhoaLabel";
-            this.tenKhoaLabel.Size = new System.Drawing.Size(179, 50);
+            this.tenKhoaLabel.Size = new System.Drawing.Size(236, 50);
             this.tenKhoaLabel.TabIndex = 2;
             this.tenKhoaLabel.Text = "Tên khoa:";
             this.tenKhoaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,10 +343,10 @@
             // 
             this.tenKhoaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tenKhoaTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenKhoaTextBox.Location = new System.Drawing.Point(188, 53);
+            this.tenKhoaTextBox.Location = new System.Drawing.Point(245, 53);
             this.tenKhoaTextBox.MaxLength = 50;
             this.tenKhoaTextBox.Name = "tenKhoaTextBox";
-            this.tenKhoaTextBox.Size = new System.Drawing.Size(427, 42);
+            this.tenKhoaTextBox.Size = new System.Drawing.Size(358, 42);
             this.tenKhoaTextBox.TabIndex = 3;
             // 
             // tabNghe
@@ -462,9 +465,11 @@
             // 
             // ngheTableLayoutPanel2
             // 
+            this.ngheTableLayoutPanel2.AutoScroll = true;
+            this.ngheTableLayoutPanel2.AutoSize = true;
             this.ngheTableLayoutPanel2.ColumnCount = 2;
-            this.ngheTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.ngheTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.ngheTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.ngheTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.ngheTableLayoutPanel2.Controls.Add(this.maNgheLabel, 0, 0);
             this.ngheTableLayoutPanel2.Controls.Add(this.maNgheTextBox, 1, 0);
             this.ngheTableLayoutPanel2.Controls.Add(this.tenNgheLabel, 0, 1);
@@ -473,15 +478,17 @@
             this.ngheTableLayoutPanel2.Controls.Add(this.ngheKhoaComboBox, 1, 2);
             this.ngheTableLayoutPanel2.Controls.Add(this.ngheMoTaLabel, 0, 3);
             this.ngheTableLayoutPanel2.Controls.Add(this.ngheMoTaRichTextBox, 1, 3);
-            this.ngheTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ngheTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ngheTableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.ngheTableLayoutPanel2.Name = "ngheTableLayoutPanel2";
-            this.ngheTableLayoutPanel2.RowCount = 4;
+            this.ngheTableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.ngheTableLayoutPanel2.RowCount = 5;
             this.ngheTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.ngheTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.ngheTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.ngheTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.ngheTableLayoutPanel2.Size = new System.Drawing.Size(618, 350);
+            this.ngheTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.ngheTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ngheTableLayoutPanel2.Size = new System.Drawing.Size(618, 618);
             this.ngheTableLayoutPanel2.TabIndex = 0;
             // 
             // maNgheLabel
@@ -492,7 +499,7 @@
             this.maNgheLabel.ForeColor = System.Drawing.Color.Red;
             this.maNgheLabel.Location = new System.Drawing.Point(3, 0);
             this.maNgheLabel.Name = "maNgheLabel";
-            this.maNgheLabel.Size = new System.Drawing.Size(179, 50);
+            this.maNgheLabel.Size = new System.Drawing.Size(236, 50);
             this.maNgheLabel.TabIndex = 0;
             this.maNgheLabel.Text = "Mã nghề:";
             this.maNgheLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -502,10 +509,10 @@
             this.maNgheTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maNgheTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maNgheTextBox.ForeColor = System.Drawing.Color.Red;
-            this.maNgheTextBox.Location = new System.Drawing.Point(188, 3);
+            this.maNgheTextBox.Location = new System.Drawing.Point(245, 3);
             this.maNgheTextBox.MaxLength = 20;
             this.maNgheTextBox.Name = "maNgheTextBox";
-            this.maNgheTextBox.Size = new System.Drawing.Size(427, 42);
+            this.maNgheTextBox.Size = new System.Drawing.Size(358, 42);
             this.maNgheTextBox.TabIndex = 1;
             // 
             // tenNgheLabel
@@ -515,7 +522,7 @@
             this.tenNgheLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tenNgheLabel.Location = new System.Drawing.Point(3, 50);
             this.tenNgheLabel.Name = "tenNgheLabel";
-            this.tenNgheLabel.Size = new System.Drawing.Size(179, 50);
+            this.tenNgheLabel.Size = new System.Drawing.Size(236, 50);
             this.tenNgheLabel.TabIndex = 2;
             this.tenNgheLabel.Text = "Tên nghề:";
             this.tenNgheLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -524,10 +531,10 @@
             // 
             this.tenNgheTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tenNgheTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenNgheTextBox.Location = new System.Drawing.Point(188, 53);
+            this.tenNgheTextBox.Location = new System.Drawing.Point(245, 53);
             this.tenNgheTextBox.MaxLength = 50;
             this.tenNgheTextBox.Name = "tenNgheTextBox";
-            this.tenNgheTextBox.Size = new System.Drawing.Size(427, 42);
+            this.tenNgheTextBox.Size = new System.Drawing.Size(358, 42);
             this.tenNgheTextBox.TabIndex = 3;
             // 
             // ngheKhoaLabel
@@ -537,7 +544,7 @@
             this.ngheKhoaLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ngheKhoaLabel.Location = new System.Drawing.Point(3, 100);
             this.ngheKhoaLabel.Name = "ngheKhoaLabel";
-            this.ngheKhoaLabel.Size = new System.Drawing.Size(179, 50);
+            this.ngheKhoaLabel.Size = new System.Drawing.Size(236, 50);
             this.ngheKhoaLabel.TabIndex = 4;
             this.ngheKhoaLabel.Text = "Khoa:";
             this.ngheKhoaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -548,10 +555,10 @@
             this.ngheKhoaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ngheKhoaComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ngheKhoaComboBox.FormattingEnabled = true;
-            this.ngheKhoaComboBox.Location = new System.Drawing.Point(188, 103);
+            this.ngheKhoaComboBox.Location = new System.Drawing.Point(245, 103);
             this.ngheKhoaComboBox.MaxLength = 20;
             this.ngheKhoaComboBox.Name = "ngheKhoaComboBox";
-            this.ngheKhoaComboBox.Size = new System.Drawing.Size(427, 42);
+            this.ngheKhoaComboBox.Size = new System.Drawing.Size(358, 42);
             this.ngheKhoaComboBox.TabIndex = 5;
             // 
             // ngheMoTaLabel
@@ -561,7 +568,7 @@
             this.ngheMoTaLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ngheMoTaLabel.Location = new System.Drawing.Point(3, 150);
             this.ngheMoTaLabel.Name = "ngheMoTaLabel";
-            this.ngheMoTaLabel.Size = new System.Drawing.Size(179, 200);
+            this.ngheMoTaLabel.Size = new System.Drawing.Size(236, 250);
             this.ngheMoTaLabel.TabIndex = 6;
             this.ngheMoTaLabel.Text = "Mô tả:";
             this.ngheMoTaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -570,9 +577,9 @@
             // 
             this.ngheMoTaRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ngheMoTaRichTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ngheMoTaRichTextBox.Location = new System.Drawing.Point(188, 153);
+            this.ngheMoTaRichTextBox.Location = new System.Drawing.Point(245, 153);
             this.ngheMoTaRichTextBox.Name = "ngheMoTaRichTextBox";
-            this.ngheMoTaRichTextBox.Size = new System.Drawing.Size(427, 194);
+            this.ngheMoTaRichTextBox.Size = new System.Drawing.Size(358, 244);
             this.ngheMoTaRichTextBox.TabIndex = 7;
             this.ngheMoTaRichTextBox.Text = "";
             // 
@@ -627,47 +634,344 @@
             this.monHocPanel.Size = new System.Drawing.Size(618, 618);
             this.monHocPanel.TabIndex = 1;
             // 
-            // tabCTDT
+            // monHocTableLayoutPanel2
             // 
-            this.tabCTDT.ImageKey = "ctdt.png";
-            this.tabCTDT.Location = new System.Drawing.Point(4, 39);
-            this.tabCTDT.Name = "tabCTDT";
-            this.tabCTDT.Size = new System.Drawing.Size(1254, 630);
-            this.tabCTDT.TabIndex = 4;
-            this.tabCTDT.Text = "CHƯƠNG TRÌNH ĐÀO TẠO";
-            this.tabCTDT.UseVisualStyleBackColor = true;
+            this.monHocTableLayoutPanel2.AutoScroll = true;
+            this.monHocTableLayoutPanel2.ColumnCount = 2;
+            this.monHocTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.monHocTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocGhiChuTextBox, 1, 12);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocGhiChuLabel, 0, 12);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThiHetMonNumericUpDown, 1, 11);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThiHetMonLabel, 0, 11);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocDinhKyNumericUpDown, 1, 10);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocDinhKyLabel, 0, 10);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThuongXuyenNumericUpDown, 1, 9);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThuongXuyenLabel, 0, 9);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKiemTraNumericUpDown, 1, 8);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKiemTraLabel, 0, 8);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThucHanhNumericUpDown, 1, 7);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThucHanhLabel, 0, 7);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocLyThuyetNumericUpDown, 1, 6);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocLyThuyetLabel, 0, 6);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocmaMonLabel, 0, 0);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocMaMonTextBox, 1, 0);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKieuMaLabel, 0, 1);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKieuMaComboBox, 1, 1);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTenMonLabel, 0, 2);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTenMonTextBox, 1, 2);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocNgheLabel, 0, 3);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocNgheComboBox, 1, 3);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocSoTinChiLabel, 0, 4);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocSoTinChiNumericUpDown, 1, 4);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTongCongLabel, 0, 5);
+            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTongCongNumericUpDown, 1, 5);
+            this.monHocTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocTableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.monHocTableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.monHocTableLayoutPanel2.Name = "monHocTableLayoutPanel2";
+            this.monHocTableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.monHocTableLayoutPanel2.RowCount = 14;
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.monHocTableLayoutPanel2.Size = new System.Drawing.Size(618, 568);
+            this.monHocTableLayoutPanel2.TabIndex = 6;
             // 
-            // tabChiTietCTDT
+            // monHocGhiChuTextBox
             // 
-            this.tabChiTietCTDT.ImageKey = "chi_tiet_ctdt.png";
-            this.tabChiTietCTDT.Location = new System.Drawing.Point(4, 39);
-            this.tabChiTietCTDT.Name = "tabChiTietCTDT";
-            this.tabChiTietCTDT.Size = new System.Drawing.Size(1254, 630);
-            this.tabChiTietCTDT.TabIndex = 5;
-            this.tabChiTietCTDT.Text = "CHI TIẾT CHƯƠNG TRÌNH ĐÀO TẠO";
-            this.tabChiTietCTDT.UseVisualStyleBackColor = true;
+            this.monHocGhiChuTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocGhiChuTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocGhiChuTextBox.Location = new System.Drawing.Point(237, 603);
+            this.monHocGhiChuTextBox.MaxLength = 50;
+            this.monHocGhiChuTextBox.Name = "monHocGhiChuTextBox";
+            this.monHocGhiChuTextBox.Size = new System.Drawing.Size(345, 42);
+            this.monHocGhiChuTextBox.TabIndex = 25;
             // 
-            // tabKeHoachDaoTaoTheoKhoa
+            // monHocGhiChuLabel
             // 
-            this.tabKeHoachDaoTaoTheoKhoa.ImageKey = "ke_hoach_dao_tao_theo_khoa.png";
-            this.tabKeHoachDaoTaoTheoKhoa.Location = new System.Drawing.Point(4, 39);
-            this.tabKeHoachDaoTaoTheoKhoa.Name = "tabKeHoachDaoTaoTheoKhoa";
-            this.tabKeHoachDaoTaoTheoKhoa.Size = new System.Drawing.Size(1254, 630);
-            this.tabKeHoachDaoTaoTheoKhoa.TabIndex = 6;
-            this.tabKeHoachDaoTaoTheoKhoa.Text = "KẾ HOẠCH ĐÀO TẠO THEO KHÓA";
-            this.tabKeHoachDaoTaoTheoKhoa.UseVisualStyleBackColor = true;
+            this.monHocGhiChuLabel.AutoSize = true;
+            this.monHocGhiChuLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocGhiChuLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocGhiChuLabel.Location = new System.Drawing.Point(3, 600);
+            this.monHocGhiChuLabel.Name = "monHocGhiChuLabel";
+            this.monHocGhiChuLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocGhiChuLabel.TabIndex = 24;
+            this.monHocGhiChuLabel.Text = "Ghi chú:";
+            this.monHocGhiChuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tabIconList
+            // monHocThiHetMonNumericUpDown
             // 
-            this.tabIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("tabIconList.ImageStream")));
-            this.tabIconList.TransparentColor = System.Drawing.Color.Transparent;
-            this.tabIconList.Images.SetKeyName(0, "ctdt.png");
-            this.tabIconList.Images.SetKeyName(1, "chi_tiet_ctdt.png");
-            this.tabIconList.Images.SetKeyName(2, "ke_hoach_dao_tao_theo_khoa.png");
-            this.tabIconList.Images.SetKeyName(3, "khoa.png");
-            this.tabIconList.Images.SetKeyName(4, "mon.png");
-            this.tabIconList.Images.SetKeyName(5, "nghe.png");
-            this.tabIconList.Images.SetKeyName(6, "nguoi_dung.png");
+            this.monHocThiHetMonNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocThiHetMonNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocThiHetMonNumericUpDown.Location = new System.Drawing.Point(237, 553);
+            this.monHocThiHetMonNumericUpDown.Name = "monHocThiHetMonNumericUpDown";
+            this.monHocThiHetMonNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocThiHetMonNumericUpDown.TabIndex = 23;
+            // 
+            // monHocThiHetMonLabel
+            // 
+            this.monHocThiHetMonLabel.AutoSize = true;
+            this.monHocThiHetMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocThiHetMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocThiHetMonLabel.Location = new System.Drawing.Point(3, 550);
+            this.monHocThiHetMonLabel.Name = "monHocThiHetMonLabel";
+            this.monHocThiHetMonLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocThiHetMonLabel.TabIndex = 22;
+            this.monHocThiHetMonLabel.Text = "Thi hết môn:";
+            this.monHocThiHetMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocDinhKyNumericUpDown
+            // 
+            this.monHocDinhKyNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocDinhKyNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocDinhKyNumericUpDown.Location = new System.Drawing.Point(237, 503);
+            this.monHocDinhKyNumericUpDown.Name = "monHocDinhKyNumericUpDown";
+            this.monHocDinhKyNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocDinhKyNumericUpDown.TabIndex = 21;
+            // 
+            // monHocDinhKyLabel
+            // 
+            this.monHocDinhKyLabel.AutoSize = true;
+            this.monHocDinhKyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocDinhKyLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocDinhKyLabel.Location = new System.Drawing.Point(3, 500);
+            this.monHocDinhKyLabel.Name = "monHocDinhKyLabel";
+            this.monHocDinhKyLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocDinhKyLabel.TabIndex = 20;
+            this.monHocDinhKyLabel.Text = "Định kỳ:";
+            this.monHocDinhKyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocThuongXuyenNumericUpDown
+            // 
+            this.monHocThuongXuyenNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocThuongXuyenNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocThuongXuyenNumericUpDown.Location = new System.Drawing.Point(237, 453);
+            this.monHocThuongXuyenNumericUpDown.Name = "monHocThuongXuyenNumericUpDown";
+            this.monHocThuongXuyenNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocThuongXuyenNumericUpDown.TabIndex = 19;
+            // 
+            // monHocThuongXuyenLabel
+            // 
+            this.monHocThuongXuyenLabel.AutoSize = true;
+            this.monHocThuongXuyenLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocThuongXuyenLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocThuongXuyenLabel.Location = new System.Drawing.Point(3, 450);
+            this.monHocThuongXuyenLabel.Name = "monHocThuongXuyenLabel";
+            this.monHocThuongXuyenLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocThuongXuyenLabel.TabIndex = 18;
+            this.monHocThuongXuyenLabel.Text = "Thường xuyên:";
+            this.monHocThuongXuyenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocKiemTraNumericUpDown
+            // 
+            this.monHocKiemTraNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocKiemTraNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocKiemTraNumericUpDown.Location = new System.Drawing.Point(237, 403);
+            this.monHocKiemTraNumericUpDown.Name = "monHocKiemTraNumericUpDown";
+            this.monHocKiemTraNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocKiemTraNumericUpDown.TabIndex = 17;
+            // 
+            // monHocKiemTraLabel
+            // 
+            this.monHocKiemTraLabel.AutoSize = true;
+            this.monHocKiemTraLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocKiemTraLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocKiemTraLabel.Location = new System.Drawing.Point(3, 400);
+            this.monHocKiemTraLabel.Name = "monHocKiemTraLabel";
+            this.monHocKiemTraLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocKiemTraLabel.TabIndex = 16;
+            this.monHocKiemTraLabel.Text = "Kiểm tra:";
+            this.monHocKiemTraLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocThucHanhNumericUpDown
+            // 
+            this.monHocThucHanhNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocThucHanhNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocThucHanhNumericUpDown.Location = new System.Drawing.Point(237, 353);
+            this.monHocThucHanhNumericUpDown.Name = "monHocThucHanhNumericUpDown";
+            this.monHocThucHanhNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocThucHanhNumericUpDown.TabIndex = 15;
+            // 
+            // monHocThucHanhLabel
+            // 
+            this.monHocThucHanhLabel.AutoSize = true;
+            this.monHocThucHanhLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocThucHanhLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocThucHanhLabel.Location = new System.Drawing.Point(3, 350);
+            this.monHocThucHanhLabel.Name = "monHocThucHanhLabel";
+            this.monHocThucHanhLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocThucHanhLabel.TabIndex = 14;
+            this.monHocThucHanhLabel.Text = "Thực hành:";
+            this.monHocThucHanhLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocLyThuyetNumericUpDown
+            // 
+            this.monHocLyThuyetNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocLyThuyetNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocLyThuyetNumericUpDown.Location = new System.Drawing.Point(237, 303);
+            this.monHocLyThuyetNumericUpDown.Name = "monHocLyThuyetNumericUpDown";
+            this.monHocLyThuyetNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocLyThuyetNumericUpDown.TabIndex = 13;
+            // 
+            // monHocLyThuyetLabel
+            // 
+            this.monHocLyThuyetLabel.AutoSize = true;
+            this.monHocLyThuyetLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocLyThuyetLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocLyThuyetLabel.Location = new System.Drawing.Point(3, 300);
+            this.monHocLyThuyetLabel.Name = "monHocLyThuyetLabel";
+            this.monHocLyThuyetLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocLyThuyetLabel.TabIndex = 12;
+            this.monHocLyThuyetLabel.Text = "Lý thuyết:";
+            this.monHocLyThuyetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocmaMonLabel
+            // 
+            this.monHocmaMonLabel.AutoSize = true;
+            this.monHocmaMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocmaMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocmaMonLabel.ForeColor = System.Drawing.Color.Red;
+            this.monHocmaMonLabel.Location = new System.Drawing.Point(3, 0);
+            this.monHocmaMonLabel.Name = "monHocmaMonLabel";
+            this.monHocmaMonLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocmaMonLabel.TabIndex = 0;
+            this.monHocmaMonLabel.Text = "Mã môn:";
+            this.monHocmaMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocMaMonTextBox
+            // 
+            this.monHocMaMonTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocMaMonTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocMaMonTextBox.ForeColor = System.Drawing.Color.Red;
+            this.monHocMaMonTextBox.Location = new System.Drawing.Point(237, 3);
+            this.monHocMaMonTextBox.MaxLength = 20;
+            this.monHocMaMonTextBox.Name = "monHocMaMonTextBox";
+            this.monHocMaMonTextBox.Size = new System.Drawing.Size(345, 42);
+            this.monHocMaMonTextBox.TabIndex = 1;
+            // 
+            // monHocKieuMaLabel
+            // 
+            this.monHocKieuMaLabel.AutoSize = true;
+            this.monHocKieuMaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocKieuMaLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocKieuMaLabel.Location = new System.Drawing.Point(3, 50);
+            this.monHocKieuMaLabel.Name = "monHocKieuMaLabel";
+            this.monHocKieuMaLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocKieuMaLabel.TabIndex = 2;
+            this.monHocKieuMaLabel.Text = "Kiểu mã:";
+            this.monHocKieuMaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocKieuMaComboBox
+            // 
+            this.monHocKieuMaComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocKieuMaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.monHocKieuMaComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocKieuMaComboBox.FormattingEnabled = true;
+            this.monHocKieuMaComboBox.Location = new System.Drawing.Point(237, 53);
+            this.monHocKieuMaComboBox.MaxLength = 20;
+            this.monHocKieuMaComboBox.Name = "monHocKieuMaComboBox";
+            this.monHocKieuMaComboBox.Size = new System.Drawing.Size(345, 42);
+            this.monHocKieuMaComboBox.TabIndex = 3;
+            // 
+            // monHocTenMonLabel
+            // 
+            this.monHocTenMonLabel.AutoSize = true;
+            this.monHocTenMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocTenMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocTenMonLabel.Location = new System.Drawing.Point(3, 100);
+            this.monHocTenMonLabel.Name = "monHocTenMonLabel";
+            this.monHocTenMonLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocTenMonLabel.TabIndex = 4;
+            this.monHocTenMonLabel.Text = "Tên môn:";
+            this.monHocTenMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocTenMonTextBox
+            // 
+            this.monHocTenMonTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocTenMonTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocTenMonTextBox.Location = new System.Drawing.Point(237, 103);
+            this.monHocTenMonTextBox.MaxLength = 50;
+            this.monHocTenMonTextBox.Name = "monHocTenMonTextBox";
+            this.monHocTenMonTextBox.Size = new System.Drawing.Size(345, 42);
+            this.monHocTenMonTextBox.TabIndex = 5;
+            // 
+            // monHocNgheLabel
+            // 
+            this.monHocNgheLabel.AutoSize = true;
+            this.monHocNgheLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocNgheLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocNgheLabel.Location = new System.Drawing.Point(3, 150);
+            this.monHocNgheLabel.Name = "monHocNgheLabel";
+            this.monHocNgheLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocNgheLabel.TabIndex = 6;
+            this.monHocNgheLabel.Text = "Nghề:";
+            this.monHocNgheLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocNgheComboBox
+            // 
+            this.monHocNgheComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocNgheComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.monHocNgheComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocNgheComboBox.FormattingEnabled = true;
+            this.monHocNgheComboBox.Location = new System.Drawing.Point(237, 153);
+            this.monHocNgheComboBox.MaxLength = 20;
+            this.monHocNgheComboBox.Name = "monHocNgheComboBox";
+            this.monHocNgheComboBox.Size = new System.Drawing.Size(345, 42);
+            this.monHocNgheComboBox.TabIndex = 7;
+            // 
+            // monHocSoTinChiLabel
+            // 
+            this.monHocSoTinChiLabel.AutoSize = true;
+            this.monHocSoTinChiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocSoTinChiLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocSoTinChiLabel.Location = new System.Drawing.Point(3, 200);
+            this.monHocSoTinChiLabel.Name = "monHocSoTinChiLabel";
+            this.monHocSoTinChiLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocSoTinChiLabel.TabIndex = 8;
+            this.monHocSoTinChiLabel.Text = "Số tín chỉ:";
+            this.monHocSoTinChiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocSoTinChiNumericUpDown
+            // 
+            this.monHocSoTinChiNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocSoTinChiNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocSoTinChiNumericUpDown.Location = new System.Drawing.Point(237, 203);
+            this.monHocSoTinChiNumericUpDown.Name = "monHocSoTinChiNumericUpDown";
+            this.monHocSoTinChiNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocSoTinChiNumericUpDown.TabIndex = 9;
+            // 
+            // monHocTongCongLabel
+            // 
+            this.monHocTongCongLabel.AutoSize = true;
+            this.monHocTongCongLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocTongCongLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocTongCongLabel.Location = new System.Drawing.Point(3, 250);
+            this.monHocTongCongLabel.Name = "monHocTongCongLabel";
+            this.monHocTongCongLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocTongCongLabel.TabIndex = 10;
+            this.monHocTongCongLabel.Text = "Tổng cộng:";
+            this.monHocTongCongLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocTongCongNumericUpDown
+            // 
+            this.monHocTongCongNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocTongCongNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocTongCongNumericUpDown.Location = new System.Drawing.Point(237, 253);
+            this.monHocTongCongNumericUpDown.Name = "monHocTongCongNumericUpDown";
+            this.monHocTongCongNumericUpDown.Size = new System.Drawing.Size(345, 42);
+            this.monHocTongCongNumericUpDown.TabIndex = 11;
             // 
             // monHocTableLayoutPanel3
             // 
@@ -728,343 +1032,47 @@
             this.monHocThemButton.Text = "THÊM";
             this.monHocThemButton.UseVisualStyleBackColor = true;
             // 
-            // monHocTableLayoutPanel2
+            // tabCTDT
             // 
-            this.monHocTableLayoutPanel2.AutoScroll = true;
-            this.monHocTableLayoutPanel2.ColumnCount = 2;
-            this.monHocTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.monHocTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocGhiChuTextBox, 1, 12);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocGhiChuLabel, 0, 12);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThiHetMonNumericUpDown, 1, 11);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThiHetMonLabel, 0, 11);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocDinhKyNumericUpDown, 1, 10);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocDinhKyLabel, 0, 10);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThuongXuyenNumericUpDown, 1, 9);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThuongXuyenLabel, 0, 9);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKiemTraNumericUpDown, 1, 8);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKiemTraLabel, 0, 8);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThucHanhNumericUpDown, 1, 7);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocThucHanhLabel, 0, 7);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocLyThuyetNumericUpDown, 1, 6);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocLyThuyetLabel, 0, 6);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocmaMonLabel, 0, 0);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocMaMonTextBox, 1, 0);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKieuMaLabel, 0, 1);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocKieuMaComboBox, 1, 1);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTenMonLabel, 0, 2);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTenMonTextBox, 1, 2);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocNgheLabel, 0, 3);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocNgheComboBox, 1, 3);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocSoTinChiLabel, 0, 4);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocSoTinChiNumericUpDown, 1, 4);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTongCongLabel, 0, 5);
-            this.monHocTableLayoutPanel2.Controls.Add(this.monHocTongCongNumericUpDown, 1, 5);
-            this.monHocTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocTableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.monHocTableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.monHocTableLayoutPanel2.Name = "monHocTableLayoutPanel2";
-            this.monHocTableLayoutPanel2.RowCount = 14;
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.monHocTableLayoutPanel2.Size = new System.Drawing.Size(618, 568);
-            this.monHocTableLayoutPanel2.TabIndex = 6;
+            this.tabCTDT.ImageKey = "ctdt.png";
+            this.tabCTDT.Location = new System.Drawing.Point(4, 39);
+            this.tabCTDT.Name = "tabCTDT";
+            this.tabCTDT.Size = new System.Drawing.Size(1254, 630);
+            this.tabCTDT.TabIndex = 4;
+            this.tabCTDT.Text = "CHƯƠNG TRÌNH ĐÀO TẠO";
+            this.tabCTDT.UseVisualStyleBackColor = true;
             // 
-            // monHocGhiChuTextBox
+            // tabChiTietCTDT
             // 
-            this.monHocGhiChuTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocGhiChuTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocGhiChuTextBox.Location = new System.Drawing.Point(182, 603);
-            this.monHocGhiChuTextBox.MaxLength = 50;
-            this.monHocGhiChuTextBox.Name = "monHocGhiChuTextBox";
-            this.monHocGhiChuTextBox.Size = new System.Drawing.Size(412, 42);
-            this.monHocGhiChuTextBox.TabIndex = 25;
+            this.tabChiTietCTDT.ImageKey = "chi_tiet_ctdt.png";
+            this.tabChiTietCTDT.Location = new System.Drawing.Point(4, 39);
+            this.tabChiTietCTDT.Name = "tabChiTietCTDT";
+            this.tabChiTietCTDT.Size = new System.Drawing.Size(1254, 630);
+            this.tabChiTietCTDT.TabIndex = 5;
+            this.tabChiTietCTDT.Text = "CHI TIẾT CHƯƠNG TRÌNH ĐÀO TẠO";
+            this.tabChiTietCTDT.UseVisualStyleBackColor = true;
             // 
-            // monHocGhiChuLabel
+            // tabKeHoachDaoTaoTheoKhoa
             // 
-            this.monHocGhiChuLabel.AutoSize = true;
-            this.monHocGhiChuLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocGhiChuLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocGhiChuLabel.Location = new System.Drawing.Point(3, 600);
-            this.monHocGhiChuLabel.Name = "monHocGhiChuLabel";
-            this.monHocGhiChuLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocGhiChuLabel.TabIndex = 24;
-            this.monHocGhiChuLabel.Text = "Ghi chú:";
-            this.monHocGhiChuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tabKeHoachDaoTaoTheoKhoa.ImageKey = "ke_hoach_dao_tao_theo_khoa.png";
+            this.tabKeHoachDaoTaoTheoKhoa.Location = new System.Drawing.Point(4, 39);
+            this.tabKeHoachDaoTaoTheoKhoa.Name = "tabKeHoachDaoTaoTheoKhoa";
+            this.tabKeHoachDaoTaoTheoKhoa.Size = new System.Drawing.Size(1254, 630);
+            this.tabKeHoachDaoTaoTheoKhoa.TabIndex = 6;
+            this.tabKeHoachDaoTaoTheoKhoa.Text = "KẾ HOẠCH ĐÀO TẠO THEO KHÓA";
+            this.tabKeHoachDaoTaoTheoKhoa.UseVisualStyleBackColor = true;
             // 
-            // monHocThiHetMonNumericUpDown
+            // tabIconList
             // 
-            this.monHocThiHetMonNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocThiHetMonNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocThiHetMonNumericUpDown.Location = new System.Drawing.Point(182, 553);
-            this.monHocThiHetMonNumericUpDown.Name = "monHocThiHetMonNumericUpDown";
-            this.monHocThiHetMonNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocThiHetMonNumericUpDown.TabIndex = 23;
-            // 
-            // monHocThiHetMonLabel
-            // 
-            this.monHocThiHetMonLabel.AutoSize = true;
-            this.monHocThiHetMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocThiHetMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocThiHetMonLabel.Location = new System.Drawing.Point(3, 550);
-            this.monHocThiHetMonLabel.Name = "monHocThiHetMonLabel";
-            this.monHocThiHetMonLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocThiHetMonLabel.TabIndex = 22;
-            this.monHocThiHetMonLabel.Text = "Thi hết môn:";
-            this.monHocThiHetMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocDinhKyNumericUpDown
-            // 
-            this.monHocDinhKyNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocDinhKyNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocDinhKyNumericUpDown.Location = new System.Drawing.Point(182, 503);
-            this.monHocDinhKyNumericUpDown.Name = "monHocDinhKyNumericUpDown";
-            this.monHocDinhKyNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocDinhKyNumericUpDown.TabIndex = 21;
-            // 
-            // monHocDinhKyLabel
-            // 
-            this.monHocDinhKyLabel.AutoSize = true;
-            this.monHocDinhKyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocDinhKyLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocDinhKyLabel.Location = new System.Drawing.Point(3, 500);
-            this.monHocDinhKyLabel.Name = "monHocDinhKyLabel";
-            this.monHocDinhKyLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocDinhKyLabel.TabIndex = 20;
-            this.monHocDinhKyLabel.Text = "Định kỳ:";
-            this.monHocDinhKyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocThuongXuyenNumericUpDown
-            // 
-            this.monHocThuongXuyenNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocThuongXuyenNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocThuongXuyenNumericUpDown.Location = new System.Drawing.Point(182, 453);
-            this.monHocThuongXuyenNumericUpDown.Name = "monHocThuongXuyenNumericUpDown";
-            this.monHocThuongXuyenNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocThuongXuyenNumericUpDown.TabIndex = 19;
-            // 
-            // monHocThuongXuyenLabel
-            // 
-            this.monHocThuongXuyenLabel.AutoSize = true;
-            this.monHocThuongXuyenLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocThuongXuyenLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocThuongXuyenLabel.Location = new System.Drawing.Point(3, 450);
-            this.monHocThuongXuyenLabel.Name = "monHocThuongXuyenLabel";
-            this.monHocThuongXuyenLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocThuongXuyenLabel.TabIndex = 18;
-            this.monHocThuongXuyenLabel.Text = "Thường xuyên:";
-            this.monHocThuongXuyenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocKiemTraNumericUpDown
-            // 
-            this.monHocKiemTraNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocKiemTraNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocKiemTraNumericUpDown.Location = new System.Drawing.Point(182, 403);
-            this.monHocKiemTraNumericUpDown.Name = "monHocKiemTraNumericUpDown";
-            this.monHocKiemTraNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocKiemTraNumericUpDown.TabIndex = 17;
-            // 
-            // monHocKiemTraLabel
-            // 
-            this.monHocKiemTraLabel.AutoSize = true;
-            this.monHocKiemTraLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocKiemTraLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocKiemTraLabel.Location = new System.Drawing.Point(3, 400);
-            this.monHocKiemTraLabel.Name = "monHocKiemTraLabel";
-            this.monHocKiemTraLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocKiemTraLabel.TabIndex = 16;
-            this.monHocKiemTraLabel.Text = "Kiểm tra:";
-            this.monHocKiemTraLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocThucHanhNumericUpDown
-            // 
-            this.monHocThucHanhNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocThucHanhNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocThucHanhNumericUpDown.Location = new System.Drawing.Point(182, 353);
-            this.monHocThucHanhNumericUpDown.Name = "monHocThucHanhNumericUpDown";
-            this.monHocThucHanhNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocThucHanhNumericUpDown.TabIndex = 15;
-            // 
-            // monHocThucHanhLabel
-            // 
-            this.monHocThucHanhLabel.AutoSize = true;
-            this.monHocThucHanhLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocThucHanhLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocThucHanhLabel.Location = new System.Drawing.Point(3, 350);
-            this.monHocThucHanhLabel.Name = "monHocThucHanhLabel";
-            this.monHocThucHanhLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocThucHanhLabel.TabIndex = 14;
-            this.monHocThucHanhLabel.Text = "Thực hành:";
-            this.monHocThucHanhLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocLyThuyetNumericUpDown
-            // 
-            this.monHocLyThuyetNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocLyThuyetNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocLyThuyetNumericUpDown.Location = new System.Drawing.Point(182, 303);
-            this.monHocLyThuyetNumericUpDown.Name = "monHocLyThuyetNumericUpDown";
-            this.monHocLyThuyetNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocLyThuyetNumericUpDown.TabIndex = 13;
-            // 
-            // monHocLyThuyetLabel
-            // 
-            this.monHocLyThuyetLabel.AutoSize = true;
-            this.monHocLyThuyetLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocLyThuyetLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocLyThuyetLabel.Location = new System.Drawing.Point(3, 300);
-            this.monHocLyThuyetLabel.Name = "monHocLyThuyetLabel";
-            this.monHocLyThuyetLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocLyThuyetLabel.TabIndex = 12;
-            this.monHocLyThuyetLabel.Text = "Lý thuyết:";
-            this.monHocLyThuyetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocmaMonLabel
-            // 
-            this.monHocmaMonLabel.AutoSize = true;
-            this.monHocmaMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocmaMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocmaMonLabel.ForeColor = System.Drawing.Color.Red;
-            this.monHocmaMonLabel.Location = new System.Drawing.Point(3, 0);
-            this.monHocmaMonLabel.Name = "monHocmaMonLabel";
-            this.monHocmaMonLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocmaMonLabel.TabIndex = 0;
-            this.monHocmaMonLabel.Text = "Mã môn:";
-            this.monHocmaMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocMaMonTextBox
-            // 
-            this.monHocMaMonTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocMaMonTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocMaMonTextBox.ForeColor = System.Drawing.Color.Red;
-            this.monHocMaMonTextBox.Location = new System.Drawing.Point(182, 3);
-            this.monHocMaMonTextBox.MaxLength = 20;
-            this.monHocMaMonTextBox.Name = "monHocMaMonTextBox";
-            this.monHocMaMonTextBox.Size = new System.Drawing.Size(412, 42);
-            this.monHocMaMonTextBox.TabIndex = 1;
-            // 
-            // monHocKieuMaLabel
-            // 
-            this.monHocKieuMaLabel.AutoSize = true;
-            this.monHocKieuMaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocKieuMaLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocKieuMaLabel.Location = new System.Drawing.Point(3, 50);
-            this.monHocKieuMaLabel.Name = "monHocKieuMaLabel";
-            this.monHocKieuMaLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocKieuMaLabel.TabIndex = 2;
-            this.monHocKieuMaLabel.Text = "Kiểu mã:";
-            this.monHocKieuMaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocKieuMaComboBox
-            // 
-            this.monHocKieuMaComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocKieuMaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.monHocKieuMaComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocKieuMaComboBox.FormattingEnabled = true;
-            this.monHocKieuMaComboBox.Location = new System.Drawing.Point(182, 53);
-            this.monHocKieuMaComboBox.MaxLength = 20;
-            this.monHocKieuMaComboBox.Name = "monHocKieuMaComboBox";
-            this.monHocKieuMaComboBox.Size = new System.Drawing.Size(412, 42);
-            this.monHocKieuMaComboBox.TabIndex = 3;
-            // 
-            // monHocTenMonLabel
-            // 
-            this.monHocTenMonLabel.AutoSize = true;
-            this.monHocTenMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocTenMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocTenMonLabel.Location = new System.Drawing.Point(3, 100);
-            this.monHocTenMonLabel.Name = "monHocTenMonLabel";
-            this.monHocTenMonLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocTenMonLabel.TabIndex = 4;
-            this.monHocTenMonLabel.Text = "Tên môn:";
-            this.monHocTenMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocTenMonTextBox
-            // 
-            this.monHocTenMonTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocTenMonTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocTenMonTextBox.Location = new System.Drawing.Point(182, 103);
-            this.monHocTenMonTextBox.MaxLength = 50;
-            this.monHocTenMonTextBox.Name = "monHocTenMonTextBox";
-            this.monHocTenMonTextBox.Size = new System.Drawing.Size(412, 42);
-            this.monHocTenMonTextBox.TabIndex = 5;
-            // 
-            // monHocNgheLabel
-            // 
-            this.monHocNgheLabel.AutoSize = true;
-            this.monHocNgheLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocNgheLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocNgheLabel.Location = new System.Drawing.Point(3, 150);
-            this.monHocNgheLabel.Name = "monHocNgheLabel";
-            this.monHocNgheLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocNgheLabel.TabIndex = 6;
-            this.monHocNgheLabel.Text = "Nghề:";
-            this.monHocNgheLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocNgheComboBox
-            // 
-            this.monHocNgheComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocNgheComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.monHocNgheComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocNgheComboBox.FormattingEnabled = true;
-            this.monHocNgheComboBox.Location = new System.Drawing.Point(182, 153);
-            this.monHocNgheComboBox.MaxLength = 20;
-            this.monHocNgheComboBox.Name = "monHocNgheComboBox";
-            this.monHocNgheComboBox.Size = new System.Drawing.Size(412, 42);
-            this.monHocNgheComboBox.TabIndex = 7;
-            // 
-            // monHocSoTinChiLabel
-            // 
-            this.monHocSoTinChiLabel.AutoSize = true;
-            this.monHocSoTinChiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocSoTinChiLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocSoTinChiLabel.Location = new System.Drawing.Point(3, 200);
-            this.monHocSoTinChiLabel.Name = "monHocSoTinChiLabel";
-            this.monHocSoTinChiLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocSoTinChiLabel.TabIndex = 8;
-            this.monHocSoTinChiLabel.Text = "Số tín chỉ:";
-            this.monHocSoTinChiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocSoTinChiNumericUpDown
-            // 
-            this.monHocSoTinChiNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocSoTinChiNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocSoTinChiNumericUpDown.Location = new System.Drawing.Point(182, 203);
-            this.monHocSoTinChiNumericUpDown.Name = "monHocSoTinChiNumericUpDown";
-            this.monHocSoTinChiNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocSoTinChiNumericUpDown.TabIndex = 9;
-            // 
-            // monHocTongCongLabel
-            // 
-            this.monHocTongCongLabel.AutoSize = true;
-            this.monHocTongCongLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocTongCongLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocTongCongLabel.Location = new System.Drawing.Point(3, 250);
-            this.monHocTongCongLabel.Name = "monHocTongCongLabel";
-            this.monHocTongCongLabel.Size = new System.Drawing.Size(173, 50);
-            this.monHocTongCongLabel.TabIndex = 10;
-            this.monHocTongCongLabel.Text = "Tổng cộng:";
-            this.monHocTongCongLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocTongCongNumericUpDown
-            // 
-            this.monHocTongCongNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocTongCongNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocTongCongNumericUpDown.Location = new System.Drawing.Point(182, 253);
-            this.monHocTongCongNumericUpDown.Name = "monHocTongCongNumericUpDown";
-            this.monHocTongCongNumericUpDown.Size = new System.Drawing.Size(412, 42);
-            this.monHocTongCongNumericUpDown.TabIndex = 11;
+            this.tabIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("tabIconList.ImageStream")));
+            this.tabIconList.TransparentColor = System.Drawing.Color.Transparent;
+            this.tabIconList.Images.SetKeyName(0, "ctdt.png");
+            this.tabIconList.Images.SetKeyName(1, "chi_tiet_ctdt.png");
+            this.tabIconList.Images.SetKeyName(2, "ke_hoach_dao_tao_theo_khoa.png");
+            this.tabIconList.Images.SetKeyName(3, "khoa.png");
+            this.tabIconList.Images.SetKeyName(4, "mon.png");
+            this.tabIconList.Images.SetKeyName(5, "nghe.png");
+            this.tabIconList.Images.SetKeyName(6, "nguoi_dung.png");
             // 
             // MenuForm
             // 
@@ -1091,6 +1099,7 @@
             this.ngheTableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ngheDataGridView)).EndInit();
             this.nghePanel.ResumeLayout(false);
+            this.nghePanel.PerformLayout();
             this.ngheTableLayoutPanel3.ResumeLayout(false);
             this.ngheTableLayoutPanel2.ResumeLayout(false);
             this.ngheTableLayoutPanel2.PerformLayout();
@@ -1098,7 +1107,6 @@
             this.monHocTableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.monHocDataGridView)).EndInit();
             this.monHocPanel.ResumeLayout(false);
-            this.monHocTableLayoutPanel3.ResumeLayout(false);
             this.monHocTableLayoutPanel2.ResumeLayout(false);
             this.monHocTableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monHocThiHetMonNumericUpDown)).EndInit();
@@ -1109,6 +1117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.monHocLyThuyetNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocSoTinChiNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocTongCongNumericUpDown)).EndInit();
+            this.monHocTableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
