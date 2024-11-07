@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -6,21 +7,291 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 {
     internal static class DatabaseManager
     {
-        private static SqlConnection connection = null;
+        public const string connectionString = "Data Source=DESKTOP-76LF2SC;Initial Catalog=CTDT_CDKTDN;Persist Security Info=True;User ID=sa;Password=1;TrustServerCertificate=True;";
+
+        public static SqlConnection connection = null;
 
         public static void Connect()
         {
             if (connection == null)
+            {
                 try
                 {
-                    string connectionString = "Data Source=DESKTOP-76LF2SC;Initial Catalog=CTDT_CDKTDN;Persist Security Info=True;User ID=sa;Password=1;TrustServerCertificate=True;";
                     connection = new SqlConnection(connectionString);
+                    connection.Open();
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show("Có lỗi xảy ra khi đang thực hiện kết nối vào cơ sở dữ liệu!.\n" + e.Message, "KẾT NỐI THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Application.Exit();
                 }
+            }
         }
+
+        #region KHOA
+
+        public static DataTable LayDuLieuBangKhoa()
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM Khoa;", connection)))
+            {
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+        public static bool ThemKhoa(string maKhoa, string tenKhoa)
+        {
+            if (connection == null || maKhoa.Equals(string.Empty) || tenKhoa.Equals(string.Empty))
+            {
+                MessageBox.Show("Thêm dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "INSERT INTO Khoa VALUES (@MaKhoa, @TenKhoa);";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+
+                command.Parameters.AddWithValue("@TenKhoa", tenKhoa);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Thêm dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thêm dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool SuaKhoa(string maKhoa, string tenKhoa)
+        {
+            if (connection == null || maKhoa.Equals(string.Empty) || tenKhoa.Equals(string.Empty))
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "UPDATE Khoa SET TenKhoa = @TenKhoa WHERE MaKhoa = @MaKhoa;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+
+                command.Parameters.AddWithValue("@TenKhoa", tenKhoa);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Sửa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sửa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool XoaKhoa(string maKhoa)
+        {
+            if (connection == null || maKhoa.Equals(string.Empty))
+            {
+                MessageBox.Show("Xóa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "DELETE FROM Khoa WHERE MaKhoa = @MaKhoa;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Xóa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xóa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
+
+        #region NGHE
+
+        public static DataTable LayDuLieuBangNghe()
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM Nghe N JOIN Khoa K ON N.MaKhoa = K.MaKhoa;", connection)))
+            {
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+        public static bool ThemNghe(string maNghe, string tenNghe, string maKhoa, string moTa)
+        {
+            if (connection == null || maNghe.Equals(string.Empty) || tenNghe.Equals(string.Empty) || maKhoa.Equals(string.Empty) || moTa.Equals(string.Empty))
+            {
+                MessageBox.Show("Thêm dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "INSERT INTO Nghe VALUES (@MaNghe, @TenNghe, @MaKhoa, @MoTa);";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaNghe", maNghe);
+
+                command.Parameters.AddWithValue("@TenNghe", tenNghe);
+
+                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+
+                command.Parameters.AddWithValue("@MoTa", moTa);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Thêm dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thêm dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool SuaNghe(string maNghe, string tenNghe, string maKhoa, string moTa)
+        {
+            if (connection == null || maNghe.Equals(string.Empty) || tenNghe.Equals(string.Empty) || maKhoa.Equals(string.Empty) || moTa.Equals(string.Empty))
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "UPDATE Nghe SET TenNghe = @TenNghe, MaKhoa = @MaKhoa, MoTa = @MoTa WHERE MaNghe = @MaNghe;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaNghe", maNghe);
+
+                command.Parameters.AddWithValue("@TenNghe", tenNghe);
+
+                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+
+                command.Parameters.AddWithValue("@MoTa", moTa);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Sửa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sửa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool XoaNghe(string maNghe)
+        {
+            if (connection == null || maNghe.Equals(string.Empty))
+            {
+                MessageBox.Show("Xóa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "DELETE FROM Nghe WHERE MaNghe = @MaNghe;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaNghe", maNghe);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Xóa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xóa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
     }
 }
