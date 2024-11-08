@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace chuyen_de_hoc_tap_doanh_nghiep_06
@@ -86,7 +87,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             ngheDataGridView.Columns["TenNghe"].DisplayIndex = 1;
 
-            ngheDataGridView.Columns["TenKhoa"].HeaderText = "Tên khoa";
+            ngheDataGridView.Columns["TenKhoa"].HeaderText = "Khoa";
 
             ngheDataGridView.Columns["TenKhoa"].DisplayIndex = 2;
 
@@ -165,15 +166,15 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             monHocDataGridView.Columns["TenNghe"].DisplayIndex = 2;
 
-            monHocDataGridView.Columns["TenNghe"].HeaderText = "Tên nghề";
+            monHocDataGridView.Columns["TenNghe"].HeaderText = "Nghề";
 
             monHocDataGridView.Columns["SoTinChi"].DisplayIndex = 3;
 
             monHocDataGridView.Columns["SoTinChi"].HeaderText = "Số tín chỉ";
 
-            monHocDataGridView.Columns["TongCong"].DisplayIndex = 4;
+            monHocDataGridView.Columns["Tong"].DisplayIndex = 4;
 
-            monHocDataGridView.Columns["TongCong"].HeaderText = "Tổng cộng";
+            monHocDataGridView.Columns["Tong"].HeaderText = "Tổng cộng";
 
             monHocDataGridView.Columns["LyThuyet"].DisplayIndex = 5;
 
@@ -226,9 +227,9 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                     ? 0
                     : (int)monHocDataGridView.CurrentRow.Cells["SoTinChi"].Value;
 
-                monHocTongCongNumericUpDown.Value = monHocDataGridView.CurrentRow.Cells["TongCong"].Value is DBNull
+                monHocThucHanhNumericUpDown.Value = monHocDataGridView.CurrentRow.Cells["ThucHanh"].Value is DBNull
                     ? 0
-                    : (int)monHocDataGridView.CurrentRow.Cells["TongCong"].Value;
+                    : (int)monHocDataGridView.CurrentRow.Cells["ThucHanh"].Value;
 
                 monHocLyThuyetNumericUpDown.Value = monHocDataGridView.CurrentRow.Cells["LyThuyet"].Value is DBNull
                     ? 0
@@ -267,7 +268,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 monHocTenMonTextBox.Text,
                 monHocNgheComboBox.SelectedValue.ToString(),
                 (int)monHocSoTinChiNumericUpDown.Value,
-                (int)monHocTongCongNumericUpDown.Value,
                 (int)monHocLyThuyetNumericUpDown.Value,
                 (int)monHocThucHanhNumericUpDown.Value,
                 (int)monHocKiemTraNumericUpDown.Value,
@@ -292,7 +292,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 monHocTenMonTextBox.Text,
                 monHocNgheComboBox.SelectedValue.ToString(),
                 (int)monHocSoTinChiNumericUpDown.Value,
-                (int)monHocTongCongNumericUpDown.Value,
                 (int)monHocLyThuyetNumericUpDown.Value,
                 (int)monHocThucHanhNumericUpDown.Value,
                 (int)monHocKiemTraNumericUpDown.Value,

@@ -298,7 +298,9 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         public static DataTable LayDuLieuBangMonHoc()
         {
-            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM MonHoc MH JOIN Nghe N ON MH.MaNghe = N.MaNghe;", connection)))
+            string query = "SELECT *, (LyThuyet + ThucHanh + KiemTra) AS Tong FROM MonHoc MH JOIN Nghe N ON MH.MaNghe = N.MaNghe;";
+
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand(query, connection)))
             {
                 DataTable dataTable = new DataTable();
 
@@ -314,7 +316,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             string tenMon,
             string maNghe,
             int soTinChi,
-            int tongCong,
             int lyThuyet,
             int thucHanh,
             int kiemTra,
@@ -335,20 +336,19 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 return false;
             }
 
-            string query = "INSERT INTO MonHoc VALUES (" +
-                "@MaMon, " +
-                "@TenMon, " +
-                "@MaNghe, " +
-                "@SoTinChi, " +
-                "@TongCong, " +
-                "@LyThuyet, " +
-                "@ThucHanh, " +
-                "@KiemTra, " +
-                "@ThuongXuyen, " +
-                "@DinhKy, " +
-                "@ThiHetMon, " +
-                "@GhiChu" +
-            ");";
+            string query = @"INSERT INTO MonHoc VALUES (
+                @MaMon,
+                @TenMon,
+                @MaNghe,
+                @SoTinChi,
+                @LyThuyet,
+                @ThucHanh,
+                @KiemTra,
+                @ThuongXuyen,
+                @DinhKy,
+                @ThiHetMon,
+                @GhiChu
+            );";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -359,8 +359,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 command.Parameters.AddWithValue("@MaNghe", maNghe);
 
                 command.Parameters.AddWithValue("@SoTinChi", soTinChi);
-
-                command.Parameters.AddWithValue("@TongCong", tongCong);
 
                 command.Parameters.AddWithValue("@LyThuyet", lyThuyet);
 
@@ -401,7 +399,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             string tenMon,
             string maNghe,
             int soTinChi,
-            int tongCong,
             int lyThuyet,
             int thucHanh,
             int kiemTra,
@@ -422,19 +419,18 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 return false;
             }
 
-            string query = "UPDATE MonHoc SET " +
-                "TenMon = @TenMon, " +
-                "MaNghe = @MaNghe, " +
-                "SoTinChi = @SoTinChi, " +
-                "TongCong = @TongCong, " +
-                "LyThuyet = @LyThuyet, " +
-                "ThucHanh = @ThucHanh, " +
-                "KiemTra = @KiemTra, " +
-                "ThuongXuyen = @ThuongXuyen, " +
-                "DinhKy = @DinhKy, " +
-                "ThiHetMon = @ThiHetMon, " +
-                "GhiChu = @GhiChu " +
-            "WHERE MaMon = @MaMon;";
+            string query = @"UPDATE MonHoc SET
+                TenMon = @TenMon,
+                MaNghe = @MaNghe,
+                SoTinChi = @SoTinChi, 
+                LyThuyet = @LyThuyet, 
+                ThucHanh = @ThucHanh,
+                KiemTra = @KiemTra,
+                ThuongXuyen = @ThuongXuyen,
+                DinhKy = @DinhKy,
+                ThiHetMon = @ThiHetMon,
+                GhiChu = @GhiChu
+            WHERE MaMon = @MaMon;";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -445,8 +441,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 command.Parameters.AddWithValue("@MaNghe", maNghe);
 
                 command.Parameters.AddWithValue("@SoTinChi", soTinChi);
-
-                command.Parameters.AddWithValue("@TongCong", tongCong);
 
                 command.Parameters.AddWithValue("@LyThuyet", lyThuyet);
 
