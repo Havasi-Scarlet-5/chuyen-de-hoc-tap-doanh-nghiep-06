@@ -28,7 +28,11 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             // MonHoc table
 
-            UpdateTableMonHoc();
+            UpdateMonHocTable();
+
+            // CTDT table
+
+            UpdateCTDTTable();
         }
 
         private void UpdateKhoaTable()
@@ -150,7 +154,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 UpdateNgheTable();
         }
 
-        private void UpdateTableMonHoc()
+        private void UpdateMonHocTable()
         {
             monHocDataGridView.DataSource = DatabaseManager.LayDuLieuBangMonHoc();
 
@@ -276,7 +280,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 (int)monHocThiHetMonNumericUpDown.Value,
                 monHocGhiChuTextBox.Text
             ))
-                UpdateTableMonHoc();
+                UpdateMonHocTable();
         }
 
         private void MonHocSuaButton_Click(object sender, System.EventArgs e)
@@ -300,13 +304,64 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 (int)monHocThiHetMonNumericUpDown.Value,
                 monHocGhiChuTextBox.Text
             ))
-                UpdateTableMonHoc();
+                UpdateMonHocTable();
         }
 
         private void MonHocXoaButton_Click(object sender, System.EventArgs e)
         {
             if (DatabaseManager.XoaMonHoc(monHocMaMonTextBox.Text))
-                UpdateTableMonHoc();
+                UpdateMonHocTable();
+        }
+
+        private void UpdateCTDTTable()
+        {
+            ctdtDataGridView.DataSource = DatabaseManager.LayDuLieuBangCTDT();
+
+            ctdtDataGridView.AutoGenerateColumns = false;
+
+            ctdtDataGridView.Columns["MaCTDT"].DisplayIndex = 0;
+
+            ctdtDataGridView.Columns["MaCTDT"].HeaderText = "Mã chường trình đào đạo";
+
+            ctdtDataGridView.Columns["NamPhatHanh"].DisplayIndex = 1;
+
+            ctdtDataGridView.Columns["NamPhatHanh"].HeaderText = "Năm phát hành";
+
+            ctdtDataGridView.Columns["MoTa"].DisplayIndex = 2;
+
+            ctdtDataGridView.Columns["MoTa"].HeaderText = "Mô tả";
+        }
+
+        private void CtdtDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (ctdtDataGridView.CurrentRow != null)
+            {
+                ctdtMaCTDTTextBox.Text = ctdtDataGridView.CurrentRow.Cells["MaCTDT"].Value.ToString();
+
+                ctdtNamPhatHanhNumericUpDown.Value = ctdtDataGridView.CurrentRow.Cells["NamPhatHanh"].Value is DBNull
+                    ? 0
+                    : (int)ctdtDataGridView.CurrentRow.Cells["NamPhatHanh"].Value;
+
+                ctdtMoTaRichTextBox.Text = ctdtDataGridView.CurrentRow.Cells["MoTa"].Value.ToString();
+            }
+        }
+
+        private void CtdtThemButton_Click(object sender, EventArgs e)
+        {
+            if (DatabaseManager.ThemCTDT(ctdtMaCTDTTextBox.Text, (int)ctdtNamPhatHanhNumericUpDown.Value, ctdtMoTaRichTextBox.Text))
+                UpdateCTDTTable();
+        }
+
+        private void CtdtSuaButton_Click(object sender, EventArgs e)
+        {
+            if (DatabaseManager.SuaCTDT(ctdtMaCTDTTextBox.Text, (int)ctdtNamPhatHanhNumericUpDown.Value, ctdtMoTaRichTextBox.Text))
+                UpdateCTDTTable();
+        }
+
+        private void CtdtXoaButton_Click(object sender, EventArgs e)
+        {
+            if (DatabaseManager.XoaCTDT(ctdtMaCTDTTextBox.Text))
+                UpdateCTDTTable();
         }
     }
 }
