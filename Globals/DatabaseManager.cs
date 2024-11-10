@@ -652,5 +652,138 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         }
 
         #endregion
+
+        #region CT_CTDT
+
+        public static DataTable LayDuLieuBangChiTietCTDT()
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM ChiTietCTDT ctCTDT JOIN MonHoc MH ON MH.MaMon = ctCTDT.MaMon;", connection)))
+            {
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+        public static bool ThemChiTietCTDT(string maCTDT, string maMon, int hocKy)
+        {
+            if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty))
+            {
+                MessageBox.Show("Thêm dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "INSERT INTO ChiTietCTDT VALUES (@MaCTDT, @MaMon, @HocKy);";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaCTDT", maCTDT);
+
+                command.Parameters.AddWithValue("@MaMon", maMon);
+
+                command.Parameters.AddWithValue("@HocKy", hocKy);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Thêm dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thêm dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool SuaChiTietCTDT(string maCTDT, string maMon, int hocKy)
+        {
+            if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty))
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "UPDATE ChiTietCTDT SET MaMon = @MaMon, HocKy = @HocKy WHERE MaCTDT = @MaCTDT;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaCTDT", maCTDT);
+
+                command.Parameters.AddWithValue("@MaMon", maMon);
+
+                command.Parameters.AddWithValue("@HocKy", hocKy);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Sửa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sửa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool XoaChiTietCTDT(string maCTDT)
+        {
+            if (connection == null || maCTDT.Equals(string.Empty))
+            {
+                MessageBox.Show("Xóa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "DELETE FROM ChiTietCTDT WHERE MaCTDT = @MaCTDT;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaCTDT", maCTDT);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Xóa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xóa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
     }
 }

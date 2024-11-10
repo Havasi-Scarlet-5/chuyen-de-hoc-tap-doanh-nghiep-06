@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace chuyen_de_hoc_tap_doanh_nghiep_06
@@ -13,6 +12,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void MenuForm_Load(object sender, System.EventArgs e)
         {
+            DatabaseManager.Connect();
+
             InitTables();
         }
 
@@ -33,6 +34,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             // CTDT table
 
             UpdateCTDTTable();
+
+            // ChiTietCTDT table
+
+            UpdateChiTietCTDTTable();
         }
 
         private void UpdateKhoaTable()
@@ -215,6 +220,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             monHocDataGridView.Columns["MaKhoa"].Visible = false;
 
             monHocDataGridView.Columns["MoTa"].Visible = false;
+
+            ctCTDTMonHocComboBox.DataSource = monHocDataGridView.DataSource;
+
+            ctCTDTMonHocComboBox.DisplayMember = "TenMon";
+
+            ctCTDTMonHocComboBox.ValueMember = "MaMon";
         }
 
         private void MonHocDataGridView_SelectionChanged(object sender, System.EventArgs e)
@@ -330,6 +341,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             ctdtDataGridView.Columns["MoTa"].DisplayIndex = 2;
 
             ctdtDataGridView.Columns["MoTa"].HeaderText = "Mô tả";
+
+            ctCTDTMaCTDTComboBox.DataSource = ctdtDataGridView.DataSource;
+
+            ctCTDTMaCTDTComboBox.DisplayMember = "MaCTDT";
+
+            ctCTDTMaCTDTComboBox.ValueMember = "MaCTDT";
         }
 
         private void CtdtDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -362,6 +379,85 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         {
             if (DatabaseManager.XoaCTDT(ctdtMaCTDTTextBox.Text))
                 UpdateCTDTTable();
+        }
+
+        private void UpdateChiTietCTDTTable()
+        {
+            ctCTDTDataGridView.DataSource = DatabaseManager.LayDuLieuBangChiTietCTDT();
+
+            ctCTDTDataGridView.AutoGenerateColumns = false;
+
+            foreach (DataGridViewColumn column in ctCTDTDataGridView.Columns)
+            {
+                switch (column.Name)
+                {
+                    case "MaCTDT":
+                        column.DisplayIndex = 0;
+                        column.HeaderText = "Mã chường trình đào đạo";
+                        break;
+                    case "TenMon":
+                        column.DisplayIndex = 1;
+                        column.HeaderText = "Môn học";
+                        break;
+                    case "HocKy":
+                        column.DisplayIndex = 2;
+                        column.HeaderText = "Học kỳ";
+                        break;
+                    default:
+                        column.Visible = false;
+                        break;
+                }
+            }
+        }
+
+        private void CtCTDTDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (ctCTDTDataGridView.CurrentRow != null)
+            {
+                ctCTDTMaCTDTComboBox.SelectedValue = ctCTDTDataGridView.CurrentRow.Cells["MaCTDT"].Value.ToString();
+
+                ctCTDTMonHocComboBox.SelectedValue = ctCTDTDataGridView.CurrentRow.Cells["MaMon"].Value.ToString();
+
+                ctCTDTHocKyNumericUpDown.Value = ctCTDTDataGridView.CurrentRow.Cells["HocKy"].Value is DBNull
+                    ? 0
+                    : (int)ctCTDTDataGridView.CurrentRow.Cells["HocKy"].Value;
+            }
+        }
+
+        private void CtCTDTThemButton_Click(object sender, EventArgs e)
+        {
+            if (ctCTDTMaCTDTComboBox.SelectedValue == null || ctCTDTMonHocComboBox.SelectedValue == null)
+            {
+                MessageBox.Show("Thêm dữ liệu thất bại!.\nÔ mã chi tiết hoặc ô môn học không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (DatabaseManager.ThemChiTietCTDT(ctCTDTMaCTDTComboBox.SelectedValue.ToString(), ctCTDTMonHocComboBox.SelectedValue.ToString(), (int)ctCTDTHocKyNumericUpDown.Value))
+                UpdateChiTietCTDTTable();
+        }
+
+        private void CtCTDTSuaButton_Click(object sender, EventArgs e)
+        {
+            if (ctCTDTMaCTDTComboBox.SelectedValue == null || ctCTDTMonHocComboBox.SelectedValue == null)
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nÔ mã chi tiết hoặc ô môn học không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (DatabaseManager.SuaChiTietCTDT(ctCTDTMaCTDTComboBox.SelectedValue.ToString(), ctCTDTMonHocComboBox.SelectedValue.ToString(), (int)ctCTDTHocKyNumericUpDown.Value))
+                UpdateChiTietCTDTTable();
+        }
+
+        private void CtCTDTXoaButton_Click(object sender, EventArgs e)
+        {
+            if (ctCTDTMaCTDTComboBox.SelectedValue == null)
+            {
+                MessageBox.Show("TXóa dữ liệu thất bại!.\nÔ mã chi tiết không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (DatabaseManager.XoaChiTietCTDT(ctCTDTMaCTDTComboBox.SelectedValue.ToString()))
+                UpdateChiTietCTDTTable();
         }
     }
 }
