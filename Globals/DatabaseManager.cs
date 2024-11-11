@@ -32,7 +32,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         public static DataTable LayDuLieuBangKhoa()
         {
-            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM Khoa;", connection)))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM Khoa ORDER BY MaKhoa ASC;", connection)))
             {
                 DataTable dataTable = new DataTable();
 
@@ -161,7 +161,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         public static DataTable LayDuLieuBangNghe()
         {
-            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM Nghe N JOIN Khoa K ON N.MaKhoa = K.MaKhoa;", connection)))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM Nghe N JOIN Khoa K ON N.MaKhoa = K.MaKhoa ORDER BY MaNghe ASC;", connection)))
             {
                 DataTable dataTable = new DataTable();
 
@@ -298,7 +298,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         public static DataTable LayDuLieuBangMonHoc()
         {
-            string query = "SELECT *, (LyThuyet + ThucHanh + KiemTra) AS Tong FROM MonHoc MH JOIN Nghe N ON MH.MaNghe = N.MaNghe;";
+            string query = "SELECT *, (LyThuyet + ThucHanh + KiemTra) AS Tong FROM MonHoc MH JOIN Nghe N ON MH.MaNghe = N.MaNghe ORDER BY MaMon ASC;";
 
             using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand(query, connection)))
             {
@@ -313,6 +313,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         public static bool ThemMonHoc
         (
             string maMon,
+            string kieuMa,
+            string loaiMon,
             string tenMon,
             string maNghe,
             int soTinChi,
@@ -328,6 +330,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             if (
                 connection == null
                 || maMon.Equals(string.Empty)
+                || kieuMa.Equals(string.Empty)
+                || loaiMon.Equals(string.Empty)
                 || tenMon.Equals(string.Empty)
                 || maNghe.Equals(string.Empty)
             )
@@ -338,6 +342,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             string query = @"INSERT INTO MonHoc VALUES (
                 @MaMon,
+                @KieuMa,
+                @LoaiMon,
                 @TenMon,
                 @MaNghe,
                 @SoTinChi,
@@ -353,6 +359,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@MaMon", maMon);
+
+                command.Parameters.AddWithValue("@KieuMa", kieuMa);
+
+                command.Parameters.AddWithValue("@LoaiMon", loaiMon);
 
                 command.Parameters.AddWithValue("@TenMon", tenMon);
 
@@ -396,6 +406,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         public static bool SuaMonHoc
         (
             string maMon,
+            string kieuMa,
+            string loaiMon,
             string tenMon,
             string maNghe,
             int soTinChi,
@@ -411,6 +423,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             if (
                 connection == null
                 || maMon.Equals(string.Empty)
+                || kieuMa.Equals(string.Empty)
+                || loaiMon.Equals(string.Empty)
                 || tenMon.Equals(string.Empty)
                 || maNghe.Equals(string.Empty)
             )
@@ -420,6 +434,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             }
 
             string query = @"UPDATE MonHoc SET
+                KieuMa = @KieuMa,
+                LoaiMon = @LoaiMon,
                 TenMon = @TenMon,
                 MaNghe = @MaNghe,
                 SoTinChi = @SoTinChi, 
@@ -435,6 +451,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@MaMon", maMon);
+
+                command.Parameters.AddWithValue("@KieuMa", kieuMa);
+
+                command.Parameters.AddWithValue("@LoaiMon", loaiMon);
 
                 command.Parameters.AddWithValue("@TenMon", tenMon);
 
@@ -524,7 +544,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         public static DataTable LayDuLieuBangCTDT()
         {
-            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM CTDT;", connection)))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM CTDT ORDER BY MaCTDT ASC;", connection)))
             {
                 DataTable dataTable = new DataTable();
 
@@ -657,7 +677,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         public static DataTable LayDuLieuBangChiTietCTDT()
         {
-            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM ChiTietCTDT ctCTDT JOIN MonHoc MH ON MH.MaMon = ctCTDT.MaMon;", connection)))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM ChiTietCTDT ctCTDT JOIN MonHoc MH ON MH.MaMon = ctCTDT.MaMon ORDER BY MaCTDT ASC;", connection)))
             {
                 DataTable dataTable = new DataTable();
 
@@ -712,7 +732,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 return false;
             }
 
-            string query = "UPDATE ChiTietCTDT SET MaMon = @MaMon, HocKy = @HocKy WHERE MaCTDT = @MaCTDT;";
+            string query = "UPDATE ChiTietCTDT SET HocKy = @HocKy WHERE MaCTDT = @MaCTDT AND MaMon = @MaMon;";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -746,19 +766,166 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             return false;
         }
 
-        public static bool XoaChiTietCTDT(string maCTDT)
+        public static bool XoaChiTietCTDT(string maCTDT, string maMon)
         {
-            if (connection == null || maCTDT.Equals(string.Empty))
+            if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty))
             {
                 MessageBox.Show("Xóa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            string query = "DELETE FROM ChiTietCTDT WHERE MaCTDT = @MaCTDT;";
+            string query = "DELETE FROM ChiTietCTDT WHERE MaCTDT = @MaCTDT AND MaMon = @MaMon;";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@MaCTDT", maCTDT);
+
+                command.Parameters.AddWithValue("@MaMon", maMon);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Xóa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xóa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
+
+        #region KeHoachDaoTaoTheoKhoa
+
+        public static DataTable LayDuLieuBangKeHoachDaoTaoTheoKhoa()
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM KeHoachDaoTaoTheoKhoa KHDTTK JOIN MonHoc MH ON MH.MaMon = KHDTTK.MaMon ORDER BY MaCTDT ASC;", connection)))
+            {
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+        public static bool ThemKeHoachDaoTaoTheoKhoa(string maCTDT, string maMon, string khoa, int hocKy, int namHoc)
+        {
+            if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty) || khoa.Equals(string.Empty))
+            {
+                MessageBox.Show("Thêm dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "INSERT INTO KeHoachDaoTaoTheoKhoa VALUES (@MaCTDT, @MaMon, @Khoa, @HocKy, @NamHoc);";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaCTDT", maCTDT);
+
+                command.Parameters.AddWithValue("@MaMon", maMon);
+
+                command.Parameters.AddWithValue("@Khoa", khoa);
+
+                command.Parameters.AddWithValue("@HocKy", hocKy);
+
+                command.Parameters.AddWithValue("@NamHoc", namHoc);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Thêm dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thêm dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool SuaKeHoachDaoTaoTheoKhoa(string maCTDT, string maMon, string khoa, int hocKy, int namHoc)
+        {
+            if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty) || khoa.Equals(string.Empty))
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "UPDATE KeHoachDaoTaoTheoKhoa SET HocKy = @HocKy, NamHoc = @NamHoc WHERE MaCTDT = @MaCTDT AND MaMon = @MaMon AND Khoa = @Khoa;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaCTDT", maCTDT);
+
+                command.Parameters.AddWithValue("@MaMon", maMon);
+
+                command.Parameters.AddWithValue("@Khoa", khoa);
+
+                command.Parameters.AddWithValue("@HocKy", hocKy);
+
+                command.Parameters.AddWithValue("@NamHoc", namHoc);
+
+                try
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Sửa dữ liệu thành công!", "THAO TÁC THÀNH CÔNG!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sửa dữ liệu thất bại!.\n" + ex.Message, "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public static bool XoaKeHoachDaoTaoTheoKhoa(string maCTDT, string maMon, string khoa)
+        {
+            if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty) || khoa.Equals(string.Empty))
+            {
+                MessageBox.Show("Xóa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string query = "DELETE FROM KeHoachDaoTaoTheoKhoa WHERE MaCTDT = @MaCTDT AND MaMon = @MaMon AND Khoa = @Khoa;";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaCTDT", maCTDT);
+
+                command.Parameters.AddWithValue("@MaMon", maMon);
+
+                command.Parameters.AddWithValue("@Khoa", khoa);
 
                 try
                 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace chuyen_de_hoc_tap_doanh_nghiep_06
@@ -38,6 +39,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             // ChiTietCTDT table
 
             UpdateChiTietCTDTTable();
+
+            // KeHoachDaoTaoTheoKhoa table
+
+            UpdateKetHoachDaoTaoTheoKhoaTable();
         }
 
         private void UpdateKhoaTable()
@@ -131,25 +136,17 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void NgheThemButton_Click(object sender, System.EventArgs e)
         {
-            if (ngheKhoaComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("Thêm dữ liệu thất bại!.\nÔ khoa không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string ngheKhoa = ngheKhoaComboBox.SelectedValue == null ? string.Empty : ngheKhoaComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.ThemNghe(maNgheTextBox.Text, tenNgheTextBox.Text, ngheKhoaComboBox.SelectedValue.ToString(), ngheMoTaRichTextBox.Text))
+            if (DatabaseManager.ThemNghe(maNgheTextBox.Text, tenNgheTextBox.Text, ngheKhoa, ngheMoTaRichTextBox.Text))
                 UpdateNgheTable();
         }
 
         private void NgheSuaButton_Click(object sender, System.EventArgs e)
         {
-            if (ngheKhoaComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("Thêm dữ liệu thất bại!.\nÔ khoa không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string ngheKhoa = ngheKhoaComboBox.SelectedValue == null ? string.Empty : ngheKhoaComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.SuaNghe(maNgheTextBox.Text, tenNgheTextBox.Text, ngheKhoaComboBox.SelectedValue.ToString(), ngheMoTaRichTextBox.Text))
+            if (DatabaseManager.SuaNghe(maNgheTextBox.Text, tenNgheTextBox.Text, ngheKhoa, ngheMoTaRichTextBox.Text))
                 UpdateNgheTable();
         }
 
@@ -169,47 +166,55 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             monHocDataGridView.Columns["MaMon"].HeaderText = "Mã môn";
 
-            monHocDataGridView.Columns["TenMon"].DisplayIndex = 1;
+            monHocDataGridView.Columns["KieuMa"].DisplayIndex = 1;
+
+            monHocDataGridView.Columns["KieuMa"].HeaderText = "Kiểu mã";
+
+            monHocDataGridView.Columns["LoaiMon"].DisplayIndex = 2;
+
+            monHocDataGridView.Columns["LoaiMon"].HeaderText = "Loại môn";
+
+            monHocDataGridView.Columns["TenMon"].DisplayIndex = 3;
 
             monHocDataGridView.Columns["TenMon"].HeaderText = "Tên môn";
 
-            monHocDataGridView.Columns["TenNghe"].DisplayIndex = 2;
+            monHocDataGridView.Columns["TenNghe"].DisplayIndex = 4;
 
             monHocDataGridView.Columns["TenNghe"].HeaderText = "Nghề";
 
-            monHocDataGridView.Columns["SoTinChi"].DisplayIndex = 3;
+            monHocDataGridView.Columns["SoTinChi"].DisplayIndex = 5;
 
             monHocDataGridView.Columns["SoTinChi"].HeaderText = "Số tín chỉ";
 
-            monHocDataGridView.Columns["Tong"].DisplayIndex = 4;
+            monHocDataGridView.Columns["Tong"].DisplayIndex = 6;
 
             monHocDataGridView.Columns["Tong"].HeaderText = "Tổng cộng";
 
-            monHocDataGridView.Columns["LyThuyet"].DisplayIndex = 5;
+            monHocDataGridView.Columns["LyThuyet"].DisplayIndex = 7;
 
             monHocDataGridView.Columns["LyThuyet"].HeaderText = "Lý thuyết";
 
-            monHocDataGridView.Columns["ThucHanh"].DisplayIndex = 6;
+            monHocDataGridView.Columns["ThucHanh"].DisplayIndex = 8;
 
             monHocDataGridView.Columns["ThucHanh"].HeaderText = "Thực hành";
 
-            monHocDataGridView.Columns["KiemTra"].DisplayIndex = 7;
+            monHocDataGridView.Columns["KiemTra"].DisplayIndex = 9;
 
             monHocDataGridView.Columns["KiemTra"].HeaderText = "Kiểm tra";
 
-            monHocDataGridView.Columns["ThuongXuyen"].DisplayIndex = 8;
+            monHocDataGridView.Columns["ThuongXuyen"].DisplayIndex = 10;
 
             monHocDataGridView.Columns["ThuongXuyen"].HeaderText = "Thường xuyên";
 
-            monHocDataGridView.Columns["DinhKy"].DisplayIndex = 9;
+            monHocDataGridView.Columns["DinhKy"].DisplayIndex = 11;
 
             monHocDataGridView.Columns["DinhKy"].HeaderText = "Định kỳ";
 
-            monHocDataGridView.Columns["ThiHetMon"].DisplayIndex = 10;
+            monHocDataGridView.Columns["ThiHetMon"].DisplayIndex = 12;
 
             monHocDataGridView.Columns["ThiHetMon"].HeaderText = "Thi hết môn";
 
-            monHocDataGridView.Columns["GhiChu"].DisplayIndex = 11;
+            monHocDataGridView.Columns["GhiChu"].DisplayIndex = 13;
 
             monHocDataGridView.Columns["GhiChu"].HeaderText = "Ghi chú";
 
@@ -226,6 +231,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             ctCTDTMonHocComboBox.DisplayMember = "TenMon";
 
             ctCTDTMonHocComboBox.ValueMember = "MaMon";
+
+            keHoachDaoTaoTheoKhoaMonComboBox.DataSource = monHocDataGridView.DataSource;
+
+            keHoachDaoTaoTheoKhoaMonComboBox.DisplayMember = "TenMon";
+
+            keHoachDaoTaoTheoKhoaMonComboBox.ValueMember = "MaMon";
         }
 
         private void MonHocDataGridView_SelectionChanged(object sender, System.EventArgs e)
@@ -233,6 +244,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             if (monHocDataGridView.CurrentRow != null)
             {
                 monHocMaMonTextBox.Text = monHocDataGridView.CurrentRow.Cells["MaMon"].Value.ToString();
+
+                monHocKieuMaTextBox.Text = monHocDataGridView.CurrentRow.Cells["KieuMa"].Value.ToString();
+
+                monHocLoaiMonTextBox.Text = monHocDataGridView.CurrentRow.Cells["LoaiMon"].Value.ToString();
 
                 monHocTenMonTextBox.Text = monHocDataGridView.CurrentRow.Cells["TenMon"].Value.ToString();
 
@@ -272,16 +287,14 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void MonHocThemButton_Click(object sender, System.EventArgs e)
         {
-            if (monHocNgheComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("Thêm dữ liệu thất bại!.\nÔ nghề không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string monHocNghe = monHocNgheComboBox.SelectedValue == null ? string.Empty : monHocNgheComboBox.SelectedValue.ToString();
 
             if (DatabaseManager.ThemMonHoc(
                 monHocMaMonTextBox.Text,
+                monHocKieuMaTextBox.Text,
+                monHocLoaiMonTextBox.Text,
                 monHocTenMonTextBox.Text,
-                monHocNgheComboBox.SelectedValue.ToString(),
+                monHocNghe,
                 (int)monHocSoTinChiNumericUpDown.Value,
                 (int)monHocLyThuyetNumericUpDown.Value,
                 (int)monHocThucHanhNumericUpDown.Value,
@@ -296,16 +309,14 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void MonHocSuaButton_Click(object sender, System.EventArgs e)
         {
-            if (monHocNgheComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("Sửa dữ liệu thất bại!.\nÔ nghề không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string monHocNghe = monHocNgheComboBox.SelectedValue == null ? string.Empty : monHocNgheComboBox.SelectedValue.ToString();
 
             if (DatabaseManager.SuaMonHoc(
                 monHocMaMonTextBox.Text,
+                monHocKieuMaTextBox.Text,
+                monHocLoaiMonTextBox.Text,
                 monHocTenMonTextBox.Text,
-                monHocNgheComboBox.SelectedValue.ToString(),
+                monHocNghe,
                 (int)monHocSoTinChiNumericUpDown.Value,
                 (int)monHocLyThuyetNumericUpDown.Value,
                 (int)monHocThucHanhNumericUpDown.Value,
@@ -347,6 +358,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             ctCTDTMaCTDTComboBox.DisplayMember = "MaCTDT";
 
             ctCTDTMaCTDTComboBox.ValueMember = "MaCTDT";
+
+            keHoachDaoTaoTheoKhoaMaCTDTComboBox.DataSource = ctdtDataGridView.DataSource;
+
+            keHoachDaoTaoTheoKhoaMaCTDTComboBox.DisplayMember = "MaCTDT";
+
+            keHoachDaoTaoTheoKhoaMaCTDTComboBox.ValueMember = "MaCTDT";
         }
 
         private void CtdtDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -426,38 +443,119 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void CtCTDTThemButton_Click(object sender, EventArgs e)
         {
-            if (ctCTDTMaCTDTComboBox.SelectedValue == null || ctCTDTMonHocComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("Thêm dữ liệu thất bại!.\nÔ mã chi tiết hoặc ô môn học không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string maCTDT = ctCTDTMaCTDTComboBox.SelectedValue == null ? string.Empty : ctCTDTMaCTDTComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.ThemChiTietCTDT(ctCTDTMaCTDTComboBox.SelectedValue.ToString(), ctCTDTMonHocComboBox.SelectedValue.ToString(), (int)ctCTDTHocKyNumericUpDown.Value))
+            string maMon = ctCTDTMonHocComboBox.SelectedValue == null ? string.Empty : ctCTDTMonHocComboBox.SelectedValue.ToString();
+
+            if (DatabaseManager.ThemChiTietCTDT(maCTDT, maMon, (int)ctCTDTHocKyNumericUpDown.Value))
                 UpdateChiTietCTDTTable();
         }
 
         private void CtCTDTSuaButton_Click(object sender, EventArgs e)
         {
-            if (ctCTDTMaCTDTComboBox.SelectedValue == null || ctCTDTMonHocComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("Sửa dữ liệu thất bại!.\nÔ mã chi tiết hoặc ô môn học không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string maCTDT = ctCTDTMaCTDTComboBox.SelectedValue == null ? string.Empty : ctCTDTMaCTDTComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.SuaChiTietCTDT(ctCTDTMaCTDTComboBox.SelectedValue.ToString(), ctCTDTMonHocComboBox.SelectedValue.ToString(), (int)ctCTDTHocKyNumericUpDown.Value))
+            string maMon = ctCTDTMonHocComboBox.SelectedValue == null ? string.Empty : ctCTDTMonHocComboBox.SelectedValue.ToString();
+
+            if (DatabaseManager.SuaChiTietCTDT(maCTDT, maMon, (int)ctCTDTHocKyNumericUpDown.Value))
                 UpdateChiTietCTDTTable();
         }
 
         private void CtCTDTXoaButton_Click(object sender, EventArgs e)
         {
-            if (ctCTDTMaCTDTComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("TXóa dữ liệu thất bại!.\nÔ mã chi tiết không được để trống.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string maCTDT = ctCTDTMaCTDTComboBox.SelectedValue == null ? string.Empty : ctCTDTMaCTDTComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.XoaChiTietCTDT(ctCTDTMaCTDTComboBox.SelectedValue.ToString()))
+            string maMon = ctCTDTMonHocComboBox.SelectedValue == null ? string.Empty : ctCTDTMonHocComboBox.SelectedValue.ToString();
+
+            if (DatabaseManager.XoaChiTietCTDT(maCTDT, maMon))
                 UpdateChiTietCTDTTable();
+        }
+
+        private void UpdateKetHoachDaoTaoTheoKhoaTable()
+        {
+            keHoachDaoTaoTheoKhoaDataGridView.DataSource = DatabaseManager.LayDuLieuBangKeHoachDaoTaoTheoKhoa();
+
+            keHoachDaoTaoTheoKhoaDataGridView.AutoGenerateColumns = false;
+
+            foreach (DataGridViewColumn column in keHoachDaoTaoTheoKhoaDataGridView.Columns)
+            {
+                switch (column.Name)
+                {
+                    case "MaCTDT":
+                        column.DisplayIndex = 0;
+                        column.HeaderText = "Mã chường trình đào đạo";
+                        break;
+                    case "TenMon":
+                        column.DisplayIndex = 1;
+                        column.HeaderText = "Môn học";
+                        break;
+                    case "Khoa":
+                        column.DisplayIndex = 2;
+                        column.HeaderText = "Khóa";
+                        break;
+                    case "HocKy":
+                        column.DisplayIndex = 3;
+                        column.HeaderText = "Học kỳ";
+                        break;
+                    case "NamHoc":
+                        column.DisplayIndex = 4;
+                        column.HeaderText = "Năm học";
+                        break;
+                    default:
+                        column.Visible = false;
+                        break;
+                }
+            }
+        }
+
+        private void KeHoachDaoTaoTheoKhoaDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (keHoachDaoTaoTheoKhoaDataGridView.CurrentRow != null)
+            {
+                keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["MaCTDT"].Value.ToString();
+
+                keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["MaMon"].Value.ToString();
+
+                keHoachDaoTaoTheoKhoaKhoaTextBox.Text = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["Khoa"].Value.ToString();
+
+                keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Value = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["HocKy"].Value is DBNull
+                    ? 0
+                    : (int)keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["HocKy"].Value;
+
+                keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Value = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["NamHoc"].Value is DBNull
+                    ? 0
+                    : (int)keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["NamHoc"].Value;
+            }
+        }
+
+        private void KeHoachDaoTaoTheoKhoaThemButton_Click(object sender, EventArgs e)
+        {
+            string maCTDT = keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue == null ? string.Empty : keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue.ToString();
+
+            string maMon = keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue == null ? string.Empty : keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue.ToString();
+
+            if (DatabaseManager.ThemKeHoachDaoTaoTheoKhoa(maCTDT, maMon, keHoachDaoTaoTheoKhoaKhoaTextBox.Text, (int)keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Value, (int)keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Value))
+                UpdateKetHoachDaoTaoTheoKhoaTable();
+        }
+
+        private void KeHoachDaoTaoTheoKhoaSuaButton_Click(object sender, EventArgs e)
+        {
+            string maCTDT = keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue == null ? string.Empty : keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue.ToString();
+
+            string maMon = keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue == null ? string.Empty : keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue.ToString();
+
+            if (DatabaseManager.SuaKeHoachDaoTaoTheoKhoa(maCTDT, maMon, keHoachDaoTaoTheoKhoaKhoaTextBox.Text, (int)keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Value, (int)keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Value))
+                UpdateKetHoachDaoTaoTheoKhoaTable();
+        }
+
+        private void KeHoachDaoTaoTheoKhoaXoaButton_Click(object sender, EventArgs e)
+        {
+            string maCTDT = keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue == null ? string.Empty : keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue.ToString();
+
+            string maMon = keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue == null ? string.Empty : keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue.ToString();
+
+            if (DatabaseManager.XoaKeHoachDaoTaoTheoKhoa(maCTDT, maMon, keHoachDaoTaoTheoKhoaKhoaTextBox.Text))
+                UpdateKetHoachDaoTaoTheoKhoaTable();
         }
     }
 }
