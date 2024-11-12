@@ -9,6 +9,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         public static Form menuForm = null;
 
+        public static Form exportForm = null;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -22,6 +24,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             loginForm = new LoginForm();
 
             menuForm = new MenuForm();
+
+            exportForm = new ExportForm();
 
             Application.Run(menuForm);
         }

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraReports.UI.XRWatermark xrWatermark1 = new DevExpress.XtraReports.UI.XRWatermark();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.titleXrLabel = new DevExpress.XtraReports.UI.XRLabel();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -55,24 +56,24 @@
             this.ReportHeader.HeightF = 36.66667F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // ReportFooter
-            // 
-            this.ReportFooter.Name = "ReportFooter";
-            // 
             // titleXrLabel
             // 
             this.titleXrLabel.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
-            this.titleXrLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.titleXrLabel.ForeColor = System.Drawing.Color.SkyBlue;
             this.titleXrLabel.LocationFloat = new DevExpress.Utils.PointFloat(2.543131E-05F, 0F);
             this.titleXrLabel.Multiline = true;
             this.titleXrLabel.Name = "titleXrLabel";
-            this.titleXrLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.titleXrLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.titleXrLabel.SizeF = new System.Drawing.SizeF(650F, 23F);
             this.titleXrLabel.StylePriority.UseFont = false;
             this.titleXrLabel.StylePriority.UseForeColor = false;
             this.titleXrLabel.StylePriority.UseTextAlignment = false;
             this.titleXrLabel.Text = "TRÌNH ĐỘ CAO ĐẲNG NGHỀ CÔNG NGHỆ THÔNG TIN";
             this.titleXrLabel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // ReportFooter
+            // 
+            this.ReportFooter.Name = "ReportFooter";
             // 
             // ChiTietCTDTReport
             // 
@@ -84,6 +85,9 @@
             this.ReportFooter});
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Version = "24.1";
+            xrWatermark1.Id = "Watermark1";
+            this.Watermarks.AddRange(new DevExpress.XtraPrinting.Drawing.Watermark[] {
+            xrWatermark1});
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

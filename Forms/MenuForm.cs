@@ -557,5 +557,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             if (DatabaseManager.XoaKeHoachDaoTaoTheoKhoa(maCTDT, maMon, keHoachDaoTaoTheoKhoaKhoaTextBox.Text))
                 UpdateKetHoachDaoTaoTheoKhoaTable();
         }
+
+        private void XuatFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.exportForm.ShowDialog();
+        }
     }
 }
