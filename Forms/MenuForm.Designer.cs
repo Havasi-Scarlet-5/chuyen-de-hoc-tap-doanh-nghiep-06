@@ -90,6 +90,10 @@
             this.monHocDataGridView = new System.Windows.Forms.DataGridView();
             this.monHocPanel = new System.Windows.Forms.Panel();
             this.monHocTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.monHocLoaiMonTextBox = new System.Windows.Forms.TextBox();
+            this.monHocLoaiMonLabel = new System.Windows.Forms.Label();
+            this.monHocKieuMaTextBox = new System.Windows.Forms.TextBox();
+            this.monHocKieuMaLabel = new System.Windows.Forms.Label();
             this.monHocGhiChuTextBox = new System.Windows.Forms.TextBox();
             this.monHocGhiChuLabel = new System.Windows.Forms.Label();
             this.monHocThiHetMonNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -147,10 +151,6 @@
             this.tenKhoaLabel = new System.Windows.Forms.Label();
             this.tenKhoaTextBox = new System.Windows.Forms.TextBox();
             this.menuFormTabControl = new System.Windows.Forms.TabControl();
-            this.monHocKieuMaLabel = new System.Windows.Forms.Label();
-            this.monHocKieuMaTextBox = new System.Windows.Forms.TextBox();
-            this.monHocLoaiMonLabel = new System.Windows.Forms.Label();
-            this.monHocLoaiMonTextBox = new System.Windows.Forms.TextBox();
             this.menuFormMenuStrip.SuspendLayout();
             this.tabKeHoachDaoTaoTheoKhoa.SuspendLayout();
             this.keHoachDaoTaoTheoKhoaTableLayoutPanel.SuspendLayout();
@@ -1061,6 +1061,50 @@
             this.monHocTableLayoutPanel2.Size = new System.Drawing.Size(618, 568);
             this.monHocTableLayoutPanel2.TabIndex = 6;
             // 
+            // monHocLoaiMonTextBox
+            // 
+            this.monHocLoaiMonTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocLoaiMonTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocLoaiMonTextBox.Location = new System.Drawing.Point(237, 103);
+            this.monHocLoaiMonTextBox.MaxLength = 50;
+            this.monHocLoaiMonTextBox.Name = "monHocLoaiMonTextBox";
+            this.monHocLoaiMonTextBox.Size = new System.Drawing.Size(345, 42);
+            this.monHocLoaiMonTextBox.TabIndex = 29;
+            // 
+            // monHocLoaiMonLabel
+            // 
+            this.monHocLoaiMonLabel.AutoSize = true;
+            this.monHocLoaiMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocLoaiMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocLoaiMonLabel.Location = new System.Drawing.Point(3, 100);
+            this.monHocLoaiMonLabel.Name = "monHocLoaiMonLabel";
+            this.monHocLoaiMonLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocLoaiMonLabel.TabIndex = 28;
+            this.monHocLoaiMonLabel.Text = "Loại môn:";
+            this.monHocLoaiMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // monHocKieuMaTextBox
+            // 
+            this.monHocKieuMaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocKieuMaTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocKieuMaTextBox.Location = new System.Drawing.Point(237, 53);
+            this.monHocKieuMaTextBox.MaxLength = 50;
+            this.monHocKieuMaTextBox.Name = "monHocKieuMaTextBox";
+            this.monHocKieuMaTextBox.Size = new System.Drawing.Size(345, 42);
+            this.monHocKieuMaTextBox.TabIndex = 27;
+            // 
+            // monHocKieuMaLabel
+            // 
+            this.monHocKieuMaLabel.AutoSize = true;
+            this.monHocKieuMaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocKieuMaLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monHocKieuMaLabel.Location = new System.Drawing.Point(3, 50);
+            this.monHocKieuMaLabel.Name = "monHocKieuMaLabel";
+            this.monHocKieuMaLabel.Size = new System.Drawing.Size(228, 50);
+            this.monHocKieuMaLabel.TabIndex = 26;
+            this.monHocKieuMaLabel.Text = "Kiểu mã:";
+            this.monHocKieuMaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // monHocGhiChuTextBox
             // 
             this.monHocGhiChuTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1826,50 +1870,6 @@
             this.menuFormTabControl.SelectedIndex = 0;
             this.menuFormTabControl.Size = new System.Drawing.Size(1262, 673);
             this.menuFormTabControl.TabIndex = 1;
-            // 
-            // monHocKieuMaLabel
-            // 
-            this.monHocKieuMaLabel.AutoSize = true;
-            this.monHocKieuMaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocKieuMaLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocKieuMaLabel.Location = new System.Drawing.Point(3, 50);
-            this.monHocKieuMaLabel.Name = "monHocKieuMaLabel";
-            this.monHocKieuMaLabel.Size = new System.Drawing.Size(228, 50);
-            this.monHocKieuMaLabel.TabIndex = 26;
-            this.monHocKieuMaLabel.Text = "Kiểu mã:";
-            this.monHocKieuMaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocKieuMaTextBox
-            // 
-            this.monHocKieuMaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocKieuMaTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocKieuMaTextBox.Location = new System.Drawing.Point(237, 53);
-            this.monHocKieuMaTextBox.MaxLength = 50;
-            this.monHocKieuMaTextBox.Name = "monHocKieuMaTextBox";
-            this.monHocKieuMaTextBox.Size = new System.Drawing.Size(345, 42);
-            this.monHocKieuMaTextBox.TabIndex = 27;
-            // 
-            // monHocLoaiMonLabel
-            // 
-            this.monHocLoaiMonLabel.AutoSize = true;
-            this.monHocLoaiMonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocLoaiMonLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocLoaiMonLabel.Location = new System.Drawing.Point(3, 100);
-            this.monHocLoaiMonLabel.Name = "monHocLoaiMonLabel";
-            this.monHocLoaiMonLabel.Size = new System.Drawing.Size(228, 50);
-            this.monHocLoaiMonLabel.TabIndex = 28;
-            this.monHocLoaiMonLabel.Text = "Loại môn:";
-            this.monHocLoaiMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // monHocLoaiMonTextBox
-            // 
-            this.monHocLoaiMonTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocLoaiMonTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monHocLoaiMonTextBox.Location = new System.Drawing.Point(237, 103);
-            this.monHocLoaiMonTextBox.MaxLength = 50;
-            this.monHocLoaiMonTextBox.Name = "monHocLoaiMonTextBox";
-            this.monHocLoaiMonTextBox.Size = new System.Drawing.Size(345, 42);
-            this.monHocLoaiMonTextBox.TabIndex = 29;
             // 
             // MenuForm
             // 
