@@ -5,11 +5,11 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 {
     internal static class Program
     {
-        public static Form loginForm = null;
+        public static LoginForm loginForm = null;
 
-        public static Form menuForm = null;
+        public static MenuForm menuForm = null;
 
-        public static Form exportForm = null;
+        public static ExportForm exportForm = null;
 
         /// <summary>
         /// The main entry point for the application.

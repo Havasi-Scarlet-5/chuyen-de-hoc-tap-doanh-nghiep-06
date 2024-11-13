@@ -33,24 +33,24 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportForm));
             this.exportFormTabControl = new System.Windows.Forms.TabControl();
             this.inChiTietChuongTrinhDaoTaoTab = new System.Windows.Forms.TabPage();
-            this.inKeHoachDaoTaoTheoKhoaTab = new System.Windows.Forms.TabPage();
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.inChiTietCTDTMaCTDTLabel = new System.Windows.Forms.Label();
-            this.inChiTietCTDTMaCTDTComboBox = new System.Windows.Forms.ComboBox();
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.inChiTietCTDTInBaoCaoButton = new System.Windows.Forms.Button();
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.inChiTietCTDTMaCTDTComboBox = new System.Windows.Forms.ComboBox();
+            this.inChiTietCTDTMaCTDTLabel = new System.Windows.Forms.Label();
+            this.inKeHoachDaoTaoTheoKhoaTab = new System.Windows.Forms.TabPage();
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton = new System.Windows.Forms.Button();
             this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.inKeHoachDaoTaoTheoKhoaKhoaComboBox = new System.Windows.Forms.ComboBox();
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel = new System.Windows.Forms.Label();
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton = new System.Windows.Forms.Button();
             this.exportFormTabControl.SuspendLayout();
             this.inChiTietChuongTrinhDaoTaoTab.SuspendLayout();
-            this.inKeHoachDaoTaoTheoKhoaTab.SuspendLayout();
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.SuspendLayout();
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2.SuspendLayout();
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel.SuspendLayout();
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.SuspendLayout();
+            this.inKeHoachDaoTaoTheoKhoaTab.SuspendLayout();
             this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.SuspendLayout();
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // exportFormTabControl
@@ -79,62 +79,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inChiTietChuongTrinhDaoTaoTab.Text = "IN CHI TIẾT CHƯƠNG TRÌNH ĐÀO TẠO";
             this.inChiTietChuongTrinhDaoTaoTab.UseVisualStyleBackColor = true;
             // 
-            // inKeHoachDaoTaoTheoKhoaTab
-            // 
-            this.inKeHoachDaoTaoTheoKhoaTab.Controls.Add(this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2);
-            this.inKeHoachDaoTaoTheoKhoaTab.Controls.Add(this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel);
-            this.inKeHoachDaoTaoTheoKhoaTab.Location = new System.Drawing.Point(4, 32);
-            this.inKeHoachDaoTaoTheoKhoaTab.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.inKeHoachDaoTaoTheoKhoaTab.Name = "inKeHoachDaoTaoTheoKhoaTab";
-            this.inKeHoachDaoTaoTheoKhoaTab.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.inKeHoachDaoTaoTheoKhoaTab.Size = new System.Drawing.Size(614, 397);
-            this.inKeHoachDaoTaoTheoKhoaTab.TabIndex = 1;
-            this.inKeHoachDaoTaoTheoKhoaTab.Text = "IN KẾ HOẠCH ĐÀO TẠO THEO KHÓA";
-            this.inKeHoachDaoTaoTheoKhoaTab.UseVisualStyleBackColor = true;
-            // 
-            // inChiTietChuongTrinhDaoTaoTableLayoutPanel
-            // 
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.AutoScroll = true;
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.ColumnCount = 2;
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Controls.Add(this.inChiTietCTDTMaCTDTComboBox, 1, 0);
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Controls.Add(this.inChiTietCTDTMaCTDTLabel, 0, 0);
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Location = new System.Drawing.Point(5, 4);
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Name = "inChiTietChuongTrinhDaoTaoTableLayoutPanel";
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowCount = 2;
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Size = new System.Drawing.Size(604, 389);
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.TabIndex = 1;
-            // 
-            // inChiTietCTDTMaCTDTLabel
-            // 
-            this.inChiTietCTDTMaCTDTLabel.AutoSize = true;
-            this.inChiTietCTDTMaCTDTLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inChiTietCTDTMaCTDTLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inChiTietCTDTMaCTDTLabel.ForeColor = System.Drawing.Color.Red;
-            this.inChiTietCTDTMaCTDTLabel.Location = new System.Drawing.Point(3, 0);
-            this.inChiTietCTDTMaCTDTLabel.Name = "inChiTietCTDTMaCTDTLabel";
-            this.inChiTietCTDTMaCTDTLabel.Size = new System.Drawing.Size(231, 50);
-            this.inChiTietCTDTMaCTDTLabel.TabIndex = 0;
-            this.inChiTietCTDTMaCTDTLabel.Text = "CTDT:";
-            this.inChiTietCTDTMaCTDTLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // inChiTietCTDTMaCTDTComboBox
-            // 
-            this.inChiTietCTDTMaCTDTComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inChiTietCTDTMaCTDTComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inChiTietCTDTMaCTDTComboBox.FormattingEnabled = true;
-            this.inChiTietCTDTMaCTDTComboBox.Location = new System.Drawing.Point(240, 3);
-            this.inChiTietCTDTMaCTDTComboBox.MaxLength = 20;
-            this.inChiTietCTDTMaCTDTComboBox.Name = "inChiTietCTDTMaCTDTComboBox";
-            this.inChiTietCTDTMaCTDTComboBox.Size = new System.Drawing.Size(351, 42);
-            this.inChiTietCTDTMaCTDTComboBox.TabIndex = 6;
-            // 
             // inChiTietChuongTrinhDaoTaoTableLayoutPanel2
             // 
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2.ColumnCount = 1;
@@ -160,6 +104,90 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inChiTietCTDTInBaoCaoButton.TabIndex = 0;
             this.inChiTietCTDTInBaoCaoButton.Text = "IN BÁO CÁO";
             this.inChiTietCTDTInBaoCaoButton.UseVisualStyleBackColor = true;
+            this.inChiTietCTDTInBaoCaoButton.Click += new System.EventHandler(this.InChiTietCTDTInBaoCaoButton_Click);
+            // 
+            // inChiTietChuongTrinhDaoTaoTableLayoutPanel
+            // 
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.AutoScroll = true;
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.ColumnCount = 2;
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Controls.Add(this.inChiTietCTDTMaCTDTComboBox, 1, 0);
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Controls.Add(this.inChiTietCTDTMaCTDTLabel, 0, 0);
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Location = new System.Drawing.Point(5, 4);
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Name = "inChiTietChuongTrinhDaoTaoTableLayoutPanel";
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowCount = 2;
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.Size = new System.Drawing.Size(604, 389);
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.TabIndex = 1;
+            // 
+            // inChiTietCTDTMaCTDTComboBox
+            // 
+            this.inChiTietCTDTMaCTDTComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inChiTietCTDTMaCTDTComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inChiTietCTDTMaCTDTComboBox.FormattingEnabled = true;
+            this.inChiTietCTDTMaCTDTComboBox.Location = new System.Drawing.Point(240, 3);
+            this.inChiTietCTDTMaCTDTComboBox.MaxLength = 20;
+            this.inChiTietCTDTMaCTDTComboBox.Name = "inChiTietCTDTMaCTDTComboBox";
+            this.inChiTietCTDTMaCTDTComboBox.Size = new System.Drawing.Size(351, 42);
+            this.inChiTietCTDTMaCTDTComboBox.TabIndex = 6;
+            // 
+            // inChiTietCTDTMaCTDTLabel
+            // 
+            this.inChiTietCTDTMaCTDTLabel.AutoSize = true;
+            this.inChiTietCTDTMaCTDTLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inChiTietCTDTMaCTDTLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inChiTietCTDTMaCTDTLabel.ForeColor = System.Drawing.Color.Red;
+            this.inChiTietCTDTMaCTDTLabel.Location = new System.Drawing.Point(3, 0);
+            this.inChiTietCTDTMaCTDTLabel.Name = "inChiTietCTDTMaCTDTLabel";
+            this.inChiTietCTDTMaCTDTLabel.Size = new System.Drawing.Size(231, 50);
+            this.inChiTietCTDTMaCTDTLabel.TabIndex = 0;
+            this.inChiTietCTDTMaCTDTLabel.Text = "CTDT:";
+            this.inChiTietCTDTMaCTDTLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // inKeHoachDaoTaoTheoKhoaTab
+            // 
+            this.inKeHoachDaoTaoTheoKhoaTab.Controls.Add(this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2);
+            this.inKeHoachDaoTaoTheoKhoaTab.Controls.Add(this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel);
+            this.inKeHoachDaoTaoTheoKhoaTab.Location = new System.Drawing.Point(4, 32);
+            this.inKeHoachDaoTaoTheoKhoaTab.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.inKeHoachDaoTaoTheoKhoaTab.Name = "inKeHoachDaoTaoTheoKhoaTab";
+            this.inKeHoachDaoTaoTheoKhoaTab.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.inKeHoachDaoTaoTheoKhoaTab.Size = new System.Drawing.Size(614, 397);
+            this.inKeHoachDaoTaoTheoKhoaTab.TabIndex = 1;
+            this.inKeHoachDaoTaoTheoKhoaTab.Text = "IN KẾ HOẠCH ĐÀO TẠO THEO KHÓA";
+            this.inKeHoachDaoTaoTheoKhoaTab.UseVisualStyleBackColor = true;
+            // 
+            // inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2
+            // 
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.ColumnCount = 1;
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Controls.Add(this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton, 0, 0);
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Location = new System.Drawing.Point(5, 343);
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Name = "inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2";
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.RowCount = 1;
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Size = new System.Drawing.Size(604, 50);
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.TabIndex = 3;
+            // 
+            // inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton
+            // 
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageKey = "them.png";
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Location = new System.Drawing.Point(3, 3);
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Name = "inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton";
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Size = new System.Drawing.Size(598, 44);
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.TabIndex = 0;
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Text = "IN BÁO CÁO";
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.UseVisualStyleBackColor = true;
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Click += new System.EventHandler(this.InKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton_Click);
             // 
             // inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel
             // 
@@ -204,32 +232,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel.Text = "Khóa:";
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2
-            // 
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.ColumnCount = 1;
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Controls.Add(this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton, 0, 0);
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Location = new System.Drawing.Point(5, 343);
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Name = "inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2";
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.RowCount = 1;
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.Size = new System.Drawing.Size(604, 50);
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.TabIndex = 3;
-            // 
-            // inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton
-            // 
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageKey = "them.png";
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Location = new System.Drawing.Point(3, 3);
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Name = "inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton";
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Size = new System.Drawing.Size(598, 44);
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.TabIndex = 0;
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Text = "IN BÁO CÁO";
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.UseVisualStyleBackColor = true;
-            // 
             // ExportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -244,13 +246,13 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.Text = "IN CHƯƠNG TRÌNH ĐÀO TẠO";
             this.exportFormTabControl.ResumeLayout(false);
             this.inChiTietChuongTrinhDaoTaoTab.ResumeLayout(false);
-            this.inKeHoachDaoTaoTheoKhoaTab.ResumeLayout(false);
+            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2.ResumeLayout(false);
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.ResumeLayout(false);
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel.PerformLayout();
-            this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2.ResumeLayout(false);
+            this.inKeHoachDaoTaoTheoKhoaTab.ResumeLayout(false);
+            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.ResumeLayout(false);
             this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel.ResumeLayout(false);
             this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel.PerformLayout();
-            this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -262,13 +264,13 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         private TabPage inKeHoachDaoTaoTheoKhoaTab;
         private TableLayoutPanel inChiTietChuongTrinhDaoTaoTableLayoutPanel;
         private Label inChiTietCTDTMaCTDTLabel;
-        private ComboBox inChiTietCTDTMaCTDTComboBox;
         private TableLayoutPanel inChiTietChuongTrinhDaoTaoTableLayoutPanel2;
         private Button inChiTietCTDTInBaoCaoButton;
         private TableLayoutPanel inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel2;
         private Button inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton;
         private TableLayoutPanel inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel;
-        private ComboBox inKeHoachDaoTaoTheoKhoaKhoaComboBox;
         private Label inKeHoachDaoTaoTheoKhoaKhoaLabel;
+        private ComboBox inChiTietCTDTMaCTDTComboBox;
+        private ComboBox inKeHoachDaoTaoTheoKhoaKhoaComboBox;
     }
 }

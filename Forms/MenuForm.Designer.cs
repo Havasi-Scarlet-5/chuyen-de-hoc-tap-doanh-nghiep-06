@@ -33,11 +33,11 @@
             this.buttonIconList = new System.Windows.Forms.ImageList(this.components);
             this.tabIconList = new System.Windows.Forms.ImageList(this.components);
             this.menuFormMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xuatFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thietLapFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nguoiDungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaoDienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xuatFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabKeHoachDaoTaoTheoKhoa = new System.Windows.Forms.TabPage();
             this.keHoachDaoTaoTheoKhoaTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.keHoachDaoTaoTheoKhoaDataGridView = new System.Windows.Forms.DataGridView();
@@ -238,6 +238,23 @@
             this.menuFormMenuStrip.TabIndex = 0;
             this.menuFormMenuStrip.Text = "menuStrip1";
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xuatFileToolStripMenuItem});
+            this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(78, 27);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // xuatFileToolStripMenuItem
+            // 
+            this.xuatFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xuatFileToolStripMenuItem.Image")));
+            this.xuatFileToolStripMenuItem.Name = "xuatFileToolStripMenuItem";
+            this.xuatFileToolStripMenuItem.Size = new System.Drawing.Size(167, 28);
+            this.xuatFileToolStripMenuItem.Text = "Xuất file";
+            this.xuatFileToolStripMenuItem.Click += new System.EventHandler(this.XuatFileToolStripMenuItem_Click);
+            // 
             // thietLapFileToolStripMenuItem
             // 
             this.thietLapFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -259,25 +276,8 @@
             // 
             this.giaoDienToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("giaoDienToolStripMenuItem.Image")));
             this.giaoDienToolStripMenuItem.Name = "giaoDienToolStripMenuItem";
-            this.giaoDienToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.giaoDienToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
             this.giaoDienToolStripMenuItem.Text = "Giao diện";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xuatFileToolStripMenuItem});
-            this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(78, 27);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // xuatFileToolStripMenuItem
-            // 
-            this.xuatFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xuatFileToolStripMenuItem.Image")));
-            this.xuatFileToolStripMenuItem.Name = "xuatFileToolStripMenuItem";
-            this.xuatFileToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.xuatFileToolStripMenuItem.Text = "Xuất file";
-            this.xuatFileToolStripMenuItem.Click += new System.EventHandler(this.XuatFileToolStripMenuItem_Click);
             // 
             // tabKeHoachDaoTaoTheoKhoa
             // 
@@ -303,7 +303,7 @@
             this.keHoachDaoTaoTheoKhoaTableLayoutPanel.Name = "keHoachDaoTaoTheoKhoaTableLayoutPanel";
             this.keHoachDaoTaoTheoKhoaTableLayoutPanel.RowCount = 1;
             this.keHoachDaoTaoTheoKhoaTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.keHoachDaoTaoTheoKhoaTableLayoutPanel.Size = new System.Drawing.Size(1092, 593);
+            this.keHoachDaoTaoTheoKhoaTableLayoutPanel.Size = new System.Drawing.Size(1090, 593);
             this.keHoachDaoTaoTheoKhoaTableLayoutPanel.TabIndex = 1;
             // 
             // keHoachDaoTaoTheoKhoaDataGridView
@@ -312,12 +312,12 @@
             this.keHoachDaoTaoTheoKhoaDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.keHoachDaoTaoTheoKhoaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.keHoachDaoTaoTheoKhoaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keHoachDaoTaoTheoKhoaDataGridView.Location = new System.Drawing.Point(549, 3);
+            this.keHoachDaoTaoTheoKhoaDataGridView.Location = new System.Drawing.Point(548, 3);
             this.keHoachDaoTaoTheoKhoaDataGridView.Name = "keHoachDaoTaoTheoKhoaDataGridView";
             this.keHoachDaoTaoTheoKhoaDataGridView.RowHeadersVisible = false;
             this.keHoachDaoTaoTheoKhoaDataGridView.RowHeadersWidth = 51;
             this.keHoachDaoTaoTheoKhoaDataGridView.RowTemplate.Height = 24;
-            this.keHoachDaoTaoTheoKhoaDataGridView.Size = new System.Drawing.Size(540, 587);
+            this.keHoachDaoTaoTheoKhoaDataGridView.Size = new System.Drawing.Size(539, 587);
             this.keHoachDaoTaoTheoKhoaDataGridView.TabIndex = 0;
             this.keHoachDaoTaoTheoKhoaDataGridView.SelectionChanged += new System.EventHandler(this.KeHoachDaoTaoTheoKhoaDataGridView_SelectionChanged);
             // 
@@ -328,7 +328,7 @@
             this.keHoachDaoTaoTheoKhoaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keHoachDaoTaoTheoKhoaPanel.Location = new System.Drawing.Point(3, 3);
             this.keHoachDaoTaoTheoKhoaPanel.Name = "keHoachDaoTaoTheoKhoaPanel";
-            this.keHoachDaoTaoTheoKhoaPanel.Size = new System.Drawing.Size(540, 587);
+            this.keHoachDaoTaoTheoKhoaPanel.Size = new System.Drawing.Size(539, 587);
             this.keHoachDaoTaoTheoKhoaPanel.TabIndex = 1;
             // 
             // KeHoachDaoTaoTheoKhoaTableLayoutPanel3
@@ -345,7 +345,7 @@
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel3.Name = "KeHoachDaoTaoTheoKhoaTableLayoutPanel3";
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel3.RowCount = 1;
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.KeHoachDaoTaoTheoKhoaTableLayoutPanel3.Size = new System.Drawing.Size(540, 50);
+            this.KeHoachDaoTaoTheoKhoaTableLayoutPanel3.Size = new System.Drawing.Size(539, 50);
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel3.TabIndex = 1;
             // 
             // keHoachDaoTaoTheoKhoaXoaButton
@@ -355,9 +355,9 @@
             this.keHoachDaoTaoTheoKhoaXoaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.keHoachDaoTaoTheoKhoaXoaButton.ImageKey = "xoa.png";
             this.keHoachDaoTaoTheoKhoaXoaButton.ImageList = this.buttonIconList;
-            this.keHoachDaoTaoTheoKhoaXoaButton.Location = new System.Drawing.Point(363, 3);
+            this.keHoachDaoTaoTheoKhoaXoaButton.Location = new System.Drawing.Point(361, 3);
             this.keHoachDaoTaoTheoKhoaXoaButton.Name = "keHoachDaoTaoTheoKhoaXoaButton";
-            this.keHoachDaoTaoTheoKhoaXoaButton.Size = new System.Drawing.Size(174, 44);
+            this.keHoachDaoTaoTheoKhoaXoaButton.Size = new System.Drawing.Size(175, 44);
             this.keHoachDaoTaoTheoKhoaXoaButton.TabIndex = 2;
             this.keHoachDaoTaoTheoKhoaXoaButton.Text = "XÓA";
             this.keHoachDaoTaoTheoKhoaXoaButton.UseVisualStyleBackColor = true;
@@ -370,9 +370,9 @@
             this.keHoachDaoTaoTheoKhoaSuaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.keHoachDaoTaoTheoKhoaSuaButton.ImageKey = "sua.png";
             this.keHoachDaoTaoTheoKhoaSuaButton.ImageList = this.buttonIconList;
-            this.keHoachDaoTaoTheoKhoaSuaButton.Location = new System.Drawing.Point(183, 3);
+            this.keHoachDaoTaoTheoKhoaSuaButton.Location = new System.Drawing.Point(182, 3);
             this.keHoachDaoTaoTheoKhoaSuaButton.Name = "keHoachDaoTaoTheoKhoaSuaButton";
-            this.keHoachDaoTaoTheoKhoaSuaButton.Size = new System.Drawing.Size(174, 44);
+            this.keHoachDaoTaoTheoKhoaSuaButton.Size = new System.Drawing.Size(173, 44);
             this.keHoachDaoTaoTheoKhoaSuaButton.TabIndex = 1;
             this.keHoachDaoTaoTheoKhoaSuaButton.Text = "SỬA";
             this.keHoachDaoTaoTheoKhoaSuaButton.UseVisualStyleBackColor = true;
@@ -387,7 +387,7 @@
             this.keHoachDaoTaoTheoKhoaThemButton.ImageList = this.buttonIconList;
             this.keHoachDaoTaoTheoKhoaThemButton.Location = new System.Drawing.Point(3, 3);
             this.keHoachDaoTaoTheoKhoaThemButton.Name = "keHoachDaoTaoTheoKhoaThemButton";
-            this.keHoachDaoTaoTheoKhoaThemButton.Size = new System.Drawing.Size(174, 44);
+            this.keHoachDaoTaoTheoKhoaThemButton.Size = new System.Drawing.Size(173, 44);
             this.keHoachDaoTaoTheoKhoaThemButton.TabIndex = 0;
             this.keHoachDaoTaoTheoKhoaThemButton.Text = "THÊM";
             this.keHoachDaoTaoTheoKhoaThemButton.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.KeHoachDaoTaoTheoKhoaTableLayoutPanel2.Size = new System.Drawing.Size(540, 587);
+            this.KeHoachDaoTaoTheoKhoaTableLayoutPanel2.Size = new System.Drawing.Size(539, 587);
             this.KeHoachDaoTaoTheoKhoaTableLayoutPanel2.TabIndex = 0;
             // 
             // keHoachDaoTaoTheoKhoaMonComboBox
@@ -429,7 +429,7 @@
             this.keHoachDaoTaoTheoKhoaMonComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keHoachDaoTaoTheoKhoaMonComboBox.ForeColor = System.Drawing.Color.Black;
             this.keHoachDaoTaoTheoKhoaMonComboBox.FormattingEnabled = true;
-            this.keHoachDaoTaoTheoKhoaMonComboBox.Location = new System.Drawing.Point(215, 53);
+            this.keHoachDaoTaoTheoKhoaMonComboBox.Location = new System.Drawing.Point(214, 53);
             this.keHoachDaoTaoTheoKhoaMonComboBox.MaxLength = 20;
             this.keHoachDaoTaoTheoKhoaMonComboBox.Name = "keHoachDaoTaoTheoKhoaMonComboBox";
             this.keHoachDaoTaoTheoKhoaMonComboBox.Size = new System.Drawing.Size(312, 42);
@@ -441,7 +441,7 @@
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.ForeColor = System.Drawing.Color.Black;
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.FormattingEnabled = true;
-            this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Location = new System.Drawing.Point(215, 3);
+            this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Location = new System.Drawing.Point(214, 3);
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.MaxLength = 20;
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Name = "keHoachDaoTaoTheoKhoaMaCTDTComboBox";
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Size = new System.Drawing.Size(312, 42);
@@ -451,7 +451,7 @@
             // 
             this.keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Location = new System.Drawing.Point(215, 203);
+            this.keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Location = new System.Drawing.Point(214, 203);
             this.keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -465,7 +465,7 @@
             // 
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Location = new System.Drawing.Point(215, 153);
+            this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Location = new System.Drawing.Point(214, 153);
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -483,7 +483,7 @@
             this.keHoachDaoTaoTheoKhoaNamHocLabel.ForeColor = System.Drawing.Color.Black;
             this.keHoachDaoTaoTheoKhoaNamHocLabel.Location = new System.Drawing.Point(3, 200);
             this.keHoachDaoTaoTheoKhoaNamHocLabel.Name = "keHoachDaoTaoTheoKhoaNamHocLabel";
-            this.keHoachDaoTaoTheoKhoaNamHocLabel.Size = new System.Drawing.Size(206, 50);
+            this.keHoachDaoTaoTheoKhoaNamHocLabel.Size = new System.Drawing.Size(205, 50);
             this.keHoachDaoTaoTheoKhoaNamHocLabel.TabIndex = 8;
             this.keHoachDaoTaoTheoKhoaNamHocLabel.Text = "Năm học:";
             this.keHoachDaoTaoTheoKhoaNamHocLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -496,7 +496,7 @@
             this.keHoachDaoTaoTheoKhoaHocKyLabel.ForeColor = System.Drawing.Color.Black;
             this.keHoachDaoTaoTheoKhoaHocKyLabel.Location = new System.Drawing.Point(3, 150);
             this.keHoachDaoTaoTheoKhoaHocKyLabel.Name = "keHoachDaoTaoTheoKhoaHocKyLabel";
-            this.keHoachDaoTaoTheoKhoaHocKyLabel.Size = new System.Drawing.Size(206, 50);
+            this.keHoachDaoTaoTheoKhoaHocKyLabel.Size = new System.Drawing.Size(205, 50);
             this.keHoachDaoTaoTheoKhoaHocKyLabel.TabIndex = 6;
             this.keHoachDaoTaoTheoKhoaHocKyLabel.Text = "Học kỳ:";
             this.keHoachDaoTaoTheoKhoaHocKyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -505,7 +505,7 @@
             // 
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keHoachDaoTaoTheoKhoaKhoaTextBox.Location = new System.Drawing.Point(215, 103);
+            this.keHoachDaoTaoTheoKhoaKhoaTextBox.Location = new System.Drawing.Point(214, 103);
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.MaxLength = 50;
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Name = "keHoachDaoTaoTheoKhoaKhoaTextBox";
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Size = new System.Drawing.Size(312, 42);
@@ -519,7 +519,7 @@
             this.keHoachDaoTaoTheoKhoaKhoaLabel.ForeColor = System.Drawing.Color.Red;
             this.keHoachDaoTaoTheoKhoaKhoaLabel.Location = new System.Drawing.Point(3, 100);
             this.keHoachDaoTaoTheoKhoaKhoaLabel.Name = "keHoachDaoTaoTheoKhoaKhoaLabel";
-            this.keHoachDaoTaoTheoKhoaKhoaLabel.Size = new System.Drawing.Size(206, 50);
+            this.keHoachDaoTaoTheoKhoaKhoaLabel.Size = new System.Drawing.Size(205, 50);
             this.keHoachDaoTaoTheoKhoaKhoaLabel.TabIndex = 4;
             this.keHoachDaoTaoTheoKhoaKhoaLabel.Text = "Khóa:";
             this.keHoachDaoTaoTheoKhoaKhoaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -532,7 +532,7 @@
             this.keHoachDaoTaoTheoKhoaMaCTDTLabel.ForeColor = System.Drawing.Color.Red;
             this.keHoachDaoTaoTheoKhoaMaCTDTLabel.Location = new System.Drawing.Point(3, 0);
             this.keHoachDaoTaoTheoKhoaMaCTDTLabel.Name = "keHoachDaoTaoTheoKhoaMaCTDTLabel";
-            this.keHoachDaoTaoTheoKhoaMaCTDTLabel.Size = new System.Drawing.Size(206, 50);
+            this.keHoachDaoTaoTheoKhoaMaCTDTLabel.Size = new System.Drawing.Size(205, 50);
             this.keHoachDaoTaoTheoKhoaMaCTDTLabel.TabIndex = 0;
             this.keHoachDaoTaoTheoKhoaMaCTDTLabel.Text = "Mã CTDT:";
             this.keHoachDaoTaoTheoKhoaMaCTDTLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -545,7 +545,7 @@
             this.keHoachDaoTaoTheoKhoaMonLabel.ForeColor = System.Drawing.Color.Red;
             this.keHoachDaoTaoTheoKhoaMonLabel.Location = new System.Drawing.Point(3, 50);
             this.keHoachDaoTaoTheoKhoaMonLabel.Name = "keHoachDaoTaoTheoKhoaMonLabel";
-            this.keHoachDaoTaoTheoKhoaMonLabel.Size = new System.Drawing.Size(206, 50);
+            this.keHoachDaoTaoTheoKhoaMonLabel.Size = new System.Drawing.Size(205, 50);
             this.keHoachDaoTaoTheoKhoaMonLabel.TabIndex = 2;
             this.keHoachDaoTaoTheoKhoaMonLabel.Text = "Môn:";
             this.keHoachDaoTaoTheoKhoaMonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

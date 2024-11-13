@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -364,6 +365,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             keHoachDaoTaoTheoKhoaMaCTDTComboBox.DisplayMember = "MaCTDT";
 
             keHoachDaoTaoTheoKhoaMaCTDTComboBox.ValueMember = "MaCTDT";
+
+            Program.exportForm.SetInChiTietCTDTData((DataTable)ctdtDataGridView.DataSource);
         }
 
         private void CtdtDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -506,6 +509,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                         break;
                 }
             }
+
+            Program.exportForm.SetInKeHoachDaoTaoTheoKhoaData(DatabaseManager.LayDanhSachKhoaBangKeHoachDaoTaoTheoKhoa());
         }
 
         private void KeHoachDaoTaoTheoKhoaDataGridView_SelectionChanged(object sender, EventArgs e)

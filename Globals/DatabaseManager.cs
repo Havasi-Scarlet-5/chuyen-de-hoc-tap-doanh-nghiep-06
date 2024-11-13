@@ -687,6 +687,18 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             }
         }
 
+        public static DataTable LayDuLieuBangChiTietCTDTExport(string maCTDT)
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand($"SELECT *, (LyThuyet + ThucHanh + KiemTra) AS Tong FROM ChiTietCTDT ctCTDT JOIN MonHoc MH ON MH.MaMon = ctCTDT.MaMon WHERE MaCTDT = '{maCTDT}' ORDER BY MaCTDT ASC;", connection)))
+            {
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
         public static bool ThemChiTietCTDT(string maCTDT, string maMon, int hocKy)
         {
             if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty))
@@ -813,6 +825,18 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         public static DataTable LayDuLieuBangKeHoachDaoTaoTheoKhoa()
         {
             using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT * FROM KeHoachDaoTaoTheoKhoa KHDTTK JOIN MonHoc MH ON MH.MaMon = KHDTTK.MaMon ORDER BY MaCTDT ASC;", connection)))
+            {
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+        public static DataTable LayDanhSachKhoaBangKeHoachDaoTaoTheoKhoa()
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT DISTINCT Khoa FROM KeHoachDaoTaoTheoKhoa ORDER BY Khoa ASC;", connection)))
             {
                 DataTable dataTable = new DataTable();
 
