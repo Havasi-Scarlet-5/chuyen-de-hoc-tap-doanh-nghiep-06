@@ -61,11 +61,11 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                         break;
 
                     case "Môn học chuyên nghề":
-                        row["LoaiMon"] = "III.  Các môn học chuyên môn nghề";
+                        row["LoaiMon"] = "III. Các môn học chuyên môn nghề";
                         break;
 
                     case "Môn học chuyên nghề tự chọn":
-                        row["LoaiMon"] = "IV.  Các môn học chuyên môn nghề tự chọn";
+                        row["LoaiMon"] = "IV. Các môn học chuyên môn nghề tự chọn";
                         break;
                 }
             }

@@ -127,6 +127,12 @@
     </Compile>
     <Compile Include="Globals\DatabaseManager.cs" />
     <Compile Include="Globals\FormsManager.cs" />
+    <Compile Include="Reports\KeHoachDaoTaoTheoKhoaReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\KeHoachDaoTaoTheoKhoaReport.Designer.cs">
+      <DependentUpon>KeHoachDaoTaoTheoKhoaReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ChiTietCTDTReport.cs">
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\KeHoachDaoTaoTheoKhoaReport.resx">
+      <DependentUpon>KeHoachDaoTaoTheoKhoaReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
