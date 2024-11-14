@@ -30,6 +30,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportForm));
             this.exportFormTabControl = new System.Windows.Forms.TabControl();
             this.inChiTietChuongTrinhDaoTaoTab = new System.Windows.Forms.TabPage();
@@ -44,6 +45,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.inKeHoachDaoTaoTheoKhoaKhoaComboBox = new System.Windows.Forms.ComboBox();
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel = new System.Windows.Forms.Label();
+            this.buttonIconList = new System.Windows.Forms.ImageList(this.components);
             this.exportFormTabControl.SuspendLayout();
             this.inChiTietChuongTrinhDaoTaoTab.SuspendLayout();
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2.SuspendLayout();
@@ -97,7 +99,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inChiTietCTDTInBaoCaoButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inChiTietCTDTInBaoCaoButton.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inChiTietCTDTInBaoCaoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inChiTietCTDTInBaoCaoButton.ImageKey = "them.png";
+            this.inChiTietCTDTInBaoCaoButton.ImageKey = "in_bao_cao.png";
+            this.inChiTietCTDTInBaoCaoButton.ImageList = this.buttonIconList;
             this.inChiTietCTDTInBaoCaoButton.Location = new System.Drawing.Point(3, 3);
             this.inChiTietCTDTInBaoCaoButton.Name = "inChiTietCTDTInBaoCaoButton";
             this.inChiTietCTDTInBaoCaoButton.Size = new System.Drawing.Size(598, 44);
@@ -180,7 +183,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageKey = "them.png";
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageKey = "in_bao_cao.png";
+            this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.ImageList = this.buttonIconList;
             this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Location = new System.Drawing.Point(3, 3);
             this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Name = "inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton";
             this.inKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton.Size = new System.Drawing.Size(598, 44);
@@ -232,6 +236,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel.Text = "Khóa:";
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // buttonIconList
+            // 
+            this.buttonIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("buttonIconList.ImageStream")));
+            this.buttonIconList.TransparentColor = System.Drawing.Color.Transparent;
+            this.buttonIconList.Images.SetKeyName(0, "in_bao_cao.png");
+            // 
             // ExportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -272,5 +282,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         private Label inKeHoachDaoTaoTheoKhoaKhoaLabel;
         private ComboBox inChiTietCTDTMaCTDTComboBox;
         private ComboBox inKeHoachDaoTaoTheoKhoaKhoaComboBox;
+        private ImageList buttonIconList;
     }
 }
