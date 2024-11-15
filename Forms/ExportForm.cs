@@ -158,6 +158,24 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                     int namHocHienTai = Convert.ToInt32(row["NamHoc"]);
 
                     int hocKyHienTai = Convert.ToInt32(row["HocKy"]);
+
+                    if (namHocHienTai == namHoc)
+                    {
+                        row[$"LyThuyetHK{hocKyHienTai}Nam1"] = lyThuyet;
+                        row[$"ThucHanhHK{hocKyHienTai}Nam1"] = thucHanh + kiemTra;
+                    }
+
+                    if (namHocHienTai == namHoc + 1)
+                    {
+                        row[$"LyThuyetHK{hocKyHienTai}Nam2"] = lyThuyet;
+                        row[$"ThucHanhHK{hocKyHienTai}Nam2"] = thucHanh + kiemTra;
+                    }
+
+                    if (namHocHienTai == namHoc + 2)
+                    {
+                        row[$"LyThuyetHK{hocKyHienTai}Nam3"] = lyThuyet;
+                        row[$"ThucHanhHK{hocKyHienTai}Nam3"] = thucHanh + kiemTra;
+                    }
                 }
 
             // End custom table
@@ -165,6 +183,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             keHoachDaoTaoTheoKhoaReport.DataSource = dataSource;
 
             keHoachDaoTaoTheoKhoaReport.SoTTXrLabel.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "[DataSource.CurrentRowIndex] + 1"));
+
+            keHoachDaoTaoTheoKhoaReport.namHoc = namHoc;
 
             keHoachDaoTaoTheoKhoaReport.ShowPreviewDialog();
         }

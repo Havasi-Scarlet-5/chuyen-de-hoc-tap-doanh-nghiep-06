@@ -850,8 +850,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                         Khoa = '{khoa}'
                     ORDER BY
                         NamHoc ASC,
-                        HocKy ASC,
-                        MH.MaMon ASC;
+	                    HocKy ASC;
                 ",
                 connection
             )))
