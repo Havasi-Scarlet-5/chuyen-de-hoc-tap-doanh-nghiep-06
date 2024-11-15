@@ -110,7 +110,49 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             keHoachDaoTaoTheoKhoaReport.bottomTitleXrLabel.Text = $"Nghề: {nghe} {lop}; Chương trình đào tạo năm {namPhatHanh} (Mã nghề: {maNghe})";
 
+            // Begin custom table
+
+            // Năm 1
+
+            dataSource.Columns.Add("LyThuyetHK1Nam1", typeof(string));
+
+            dataSource.Columns.Add("LyThuyetHK2Nam1", typeof(string));
+
+            dataSource.Columns.Add("ThucHanhHK1Nam1", typeof(string));
+
+            dataSource.Columns.Add("ThucHanhHK2Nam1", typeof(string));
+
+            // Năm 2
+
+            dataSource.Columns.Add("LyThuyetHK1Nam2", typeof(string));
+
+            dataSource.Columns.Add("LyThuyetHK2Nam2", typeof(string));
+
+            dataSource.Columns.Add("ThucHanhHK1Nam2", typeof(string));
+
+            dataSource.Columns.Add("ThucHanhHK2Nam2", typeof(string));
+
+            // Năm 3
+
+            dataSource.Columns.Add("LyThuyetHK1Nam3", typeof(string));
+
+            dataSource.Columns.Add("LyThuyetHK2Nam3", typeof(string));
+
+            dataSource.Columns.Add("ThucHanhHK1Nam3", typeof(string));
+
+            dataSource.Columns.Add("ThucHanhHK2Nam3", typeof(string));
+
+            // Lấy năm học làm chuẩn cho năm thứ 1 sử dụng biến namHoc
+
+            foreach (DataRow row in dataSource.Rows)
+            {
+            }
+
+            // End custom table
+
             keHoachDaoTaoTheoKhoaReport.DataSource = dataSource;
+
+            keHoachDaoTaoTheoKhoaReport.SoTTXrLabel.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "[DataSource.CurrentRowIndex] + 1"));
 
             keHoachDaoTaoTheoKhoaReport.ShowPreviewDialog();
         }

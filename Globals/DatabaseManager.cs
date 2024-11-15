@@ -839,7 +839,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand(
                 $@"
                     SELECT
-                        *
+                        *,
+                        (LyThuyet + ThucHanh + KiemTra) AS Tong
                     FROM
                         KeHoachDaoTaoTheoKhoa AS KHDTTK
 	                    JOIN CTDT AS CD ON CD.MaCTDT = KHDTTK.MaCTDT

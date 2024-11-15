@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Detail.ExpressionBindings" xml:space="preserve">
+    <value>Iif([LoaiMon] == 'Môn chung', '#c6e0b4',
+Iif([LoaiMon] == 'Môn học cơ sở', '#ffe699',
+Iif([LoaiMon] == 'Môn học chuyên nghề', '#f8cbad',
+Iif([LoaiMon] == 'Môn học chuyên nghề tự chọn', '#ffff00', 'White'))))
+</value>
+  </data>
 </root>
