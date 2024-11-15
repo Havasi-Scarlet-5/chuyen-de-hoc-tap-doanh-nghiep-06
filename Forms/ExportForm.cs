@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 
@@ -79,7 +80,39 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void InKeHoachDaoTaoTheoKhoaKhoaInBaoCaoButton_Click(object sender, System.EventArgs e)
         {
+            KeHoachDaoTaoTheoKhoaReport keHoachDaoTaoTheoKhoaReport = new KeHoachDaoTaoTheoKhoaReport();
 
+            DateTime ngayThangNam = DateTime.Now;
+
+            int ngay = ngayThangNam.Day;
+
+            int thang = ngayThangNam.Month;
+
+            int nam = ngayThangNam.Year;
+
+            keHoachDaoTaoTheoKhoaReport.topTitleXrLabel.Text = $"Phụ lục 14A: Ban hành theo quyết định số 1 / QĐ-CĐKT ngày {ngay} tháng {thang} năm {nam}";
+
+            string khoa = inKeHoachDaoTaoTheoKhoaKhoaComboBox.SelectedValue == null ? "" : inKeHoachDaoTaoTheoKhoaKhoaComboBox.SelectedValue.ToString();
+
+            var dataSource = DatabaseManager.LayDuLieuBangKeHoachDaoTaoTheoKhoaExport(khoa);
+
+            int namHoc = dataSource.Rows.Count > 0 ? Convert.ToInt32(dataSource.Rows[0]["NamHoc"]) : 0;
+
+            keHoachDaoTaoTheoKhoaReport.titleXrLabel.Text = "KẾ HOẠCH ĐÀO TẠO - TRÌNH ĐỘ " + (khoa.Contains("CD") ? "CAO ĐẲNG" : "TRUNG CẤP") + $" KHÓA {namHoc}";
+
+            string nghe = dataSource.Rows.Count > 0 ? dataSource.Rows[0]["TenNghe"].ToString() : "";
+
+            string lop = dataSource.Rows.Count > 0 ? dataSource.Rows[0]["MaCTDT"].ToString().Split('_')[0] : "";
+
+            string namPhatHanh = dataSource.Rows.Count > 0 ? dataSource.Rows[0]["NamPhatHanh"].ToString() : "";
+
+            string maNghe = dataSource.Rows.Count > 0 ? dataSource.Rows[0]["MaNghe"].ToString() : "";
+
+            keHoachDaoTaoTheoKhoaReport.bottomTitleXrLabel.Text = $"Nghề: {nghe} {lop}; Chương trình đào tạo năm {namPhatHanh} (Mã nghề: {maNghe})";
+
+            keHoachDaoTaoTheoKhoaReport.DataSource = dataSource;
+
+            keHoachDaoTaoTheoKhoaReport.ShowPreviewDialog();
         }
     }
 }

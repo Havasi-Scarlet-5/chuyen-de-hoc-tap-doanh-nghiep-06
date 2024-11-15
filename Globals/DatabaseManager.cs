@@ -834,6 +834,35 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             }
         }
 
+        public static DataTable LayDuLieuBangKeHoachDaoTaoTheoKhoaExport(string khoa)
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand(
+                $@"
+                    SELECT
+                        *
+                    FROM
+                        KeHoachDaoTaoTheoKhoa AS KHDTTK
+	                    JOIN CTDT AS CD ON CD.MaCTDT = KHDTTK.MaCTDT
+                        JOIN MonHoc AS MH ON MH.MaMon = KHDTTK.MaMon
+                        JOIN Nghe AS N ON MH.MaNghe = N.MaNghe
+                    WHERE
+                        Khoa = '{khoa}'
+                    ORDER BY
+                        NamHoc ASC,
+                        HocKy ASC,
+                        MH.MaMon ASC;
+                ",
+                connection
+            )))
+            {
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
         public static DataTable LayDanhSachKhoaBangKeHoachDaoTaoTheoKhoa()
         {
             using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand("SELECT DISTINCT Khoa FROM KeHoachDaoTaoTheoKhoa ORDER BY Khoa ASC;", connection)))
