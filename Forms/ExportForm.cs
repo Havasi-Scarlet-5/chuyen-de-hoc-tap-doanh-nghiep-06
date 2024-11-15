@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 
@@ -47,29 +48,30 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             var dataSource = DatabaseManager.LayDuLieuBangChiTietCTDTExport(maCTDT);
 
-            foreach (DataRow row in dataSource.Rows)
-            {
-                string loaiMon = row["LoaiMon"].ToString();
-
-                switch (loaiMon)
+            if (dataSource.Rows.Count > 0)
+                foreach (DataRow row in dataSource.Rows)
                 {
-                    case "Môn chung":
-                        row["LoaiMon"] = "I. Các môn chung";
-                        break;
+                    string loaiMon = row["LoaiMon"].ToString();
 
-                    case "Môn học cơ sở":
-                        row["LoaiMon"] = "II. Các môn học cơ sở";
-                        break;
+                    switch (loaiMon)
+                    {
+                        case "Môn chung":
+                            row["LoaiMon"] = "I. Các môn chung";
+                            break;
 
-                    case "Môn học chuyên nghề":
-                        row["LoaiMon"] = "III. Các môn học chuyên môn nghề";
-                        break;
+                        case "Môn học cơ sở":
+                            row["LoaiMon"] = "II. Các môn học cơ sở";
+                            break;
 
-                    case "Môn học chuyên nghề tự chọn":
-                        row["LoaiMon"] = "IV. Các môn học chuyên môn nghề tự chọn";
-                        break;
+                        case "Môn học chuyên nghề":
+                            row["LoaiMon"] = "III. Các môn học chuyên môn nghề";
+                            break;
+
+                        case "Môn học chuyên nghề tự chọn":
+                            row["LoaiMon"] = "IV. Các môn học chuyên môn nghề tự chọn";
+                            break;
+                    }
                 }
-            }
 
             chiTietCTDTReport.DataSource = dataSource;
 
@@ -114,39 +116,49 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             // Năm 1
 
-            dataSource.Columns.Add("LyThuyetHK1Nam1", typeof(string));
+            dataSource.Columns.Add("LyThuyetHK1Nam1", typeof(int));
 
-            dataSource.Columns.Add("LyThuyetHK2Nam1", typeof(string));
+            dataSource.Columns.Add("LyThuyetHK2Nam1", typeof(int));
 
-            dataSource.Columns.Add("ThucHanhHK1Nam1", typeof(string));
+            dataSource.Columns.Add("ThucHanhHK1Nam1", typeof(int));
 
-            dataSource.Columns.Add("ThucHanhHK2Nam1", typeof(string));
+            dataSource.Columns.Add("ThucHanhHK2Nam1", typeof(int));
 
             // Năm 2
 
-            dataSource.Columns.Add("LyThuyetHK1Nam2", typeof(string));
+            dataSource.Columns.Add("LyThuyetHK1Nam2", typeof(int));
 
-            dataSource.Columns.Add("LyThuyetHK2Nam2", typeof(string));
+            dataSource.Columns.Add("LyThuyetHK2Nam2", typeof(int));
 
-            dataSource.Columns.Add("ThucHanhHK1Nam2", typeof(string));
+            dataSource.Columns.Add("ThucHanhHK1Nam2", typeof(int));
 
-            dataSource.Columns.Add("ThucHanhHK2Nam2", typeof(string));
+            dataSource.Columns.Add("ThucHanhHK2Nam2", typeof(int));
 
             // Năm 3
 
-            dataSource.Columns.Add("LyThuyetHK1Nam3", typeof(string));
+            dataSource.Columns.Add("LyThuyetHK1Nam3", typeof(int));
 
-            dataSource.Columns.Add("LyThuyetHK2Nam3", typeof(string));
+            dataSource.Columns.Add("LyThuyetHK2Nam3", typeof(int));
 
-            dataSource.Columns.Add("ThucHanhHK1Nam3", typeof(string));
+            dataSource.Columns.Add("ThucHanhHK1Nam3", typeof(int));
 
-            dataSource.Columns.Add("ThucHanhHK2Nam3", typeof(string));
+            dataSource.Columns.Add("ThucHanhHK2Nam3", typeof(int));
 
             // Lấy năm học làm chuẩn cho năm thứ 1 sử dụng biến namHoc
 
-            foreach (DataRow row in dataSource.Rows)
-            {
-            }
+            if (dataSource.Rows.Count > 0)
+                foreach (DataRow row in dataSource.Rows)
+                {
+                    int lyThuyet = Convert.ToInt32(row["LyThuyet"]);
+
+                    int thucHanh = Convert.ToInt32(row["ThucHanh"]);
+
+                    int kiemTra = Convert.ToInt32(row["KiemTra"]);
+
+                    int namHocHienTai = Convert.ToInt32(row["NamHoc"]);
+
+                    int hocKyHienTai = Convert.ToInt32(row["HocKy"]);
+                }
 
             // End custom table
 
