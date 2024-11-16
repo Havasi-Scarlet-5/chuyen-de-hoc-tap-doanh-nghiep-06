@@ -35,6 +35,7 @@
             this.menuFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuatFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thietLapFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nguoiDungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaoDienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -241,7 +242,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xuatFileToolStripMenuItem});
+            this.xuatFileToolStripMenuItem,
+            this.thoatToolStripMenuItem});
             this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(78, 27);
@@ -255,6 +257,14 @@
             this.xuatFileToolStripMenuItem.Text = "Xuất file";
             this.xuatFileToolStripMenuItem.Click += new System.EventHandler(this.XuatFileToolStripMenuItem_Click);
             // 
+            // thoatToolStripMenuItem
+            // 
+            this.thoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thoatToolStripMenuItem.Image")));
+            this.thoatToolStripMenuItem.Name = "thoatToolStripMenuItem";
+            this.thoatToolStripMenuItem.Size = new System.Drawing.Size(167, 28);
+            this.thoatToolStripMenuItem.Text = "Thoát";
+            this.thoatToolStripMenuItem.Click += new System.EventHandler(this.ThoatToolStripMenuItem_Click);
+            // 
             // thietLapFileToolStripMenuItem
             // 
             this.thietLapFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -264,19 +274,20 @@
             this.thietLapFileToolStripMenuItem.Name = "thietLapFileToolStripMenuItem";
             this.thietLapFileToolStripMenuItem.Size = new System.Drawing.Size(119, 27);
             this.thietLapFileToolStripMenuItem.Text = "Thiết lập";
+            this.thietLapFileToolStripMenuItem.Visible = false;
             // 
             // nguoiDungToolStripMenuItem
             // 
             this.nguoiDungToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nguoiDungToolStripMenuItem.Image")));
             this.nguoiDungToolStripMenuItem.Name = "nguoiDungToolStripMenuItem";
-            this.nguoiDungToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
+            this.nguoiDungToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.nguoiDungToolStripMenuItem.Text = "Người dùng";
             // 
             // giaoDienToolStripMenuItem
             // 
             this.giaoDienToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("giaoDienToolStripMenuItem.Image")));
             this.giaoDienToolStripMenuItem.Name = "giaoDienToolStripMenuItem";
-            this.giaoDienToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
+            this.giaoDienToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.giaoDienToolStripMenuItem.Text = "Giao diện";
             // 
             // tabKeHoachDaoTaoTheoKhoa
@@ -2091,5 +2102,6 @@
         private System.Windows.Forms.Label monHocKieuMaLabel;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xuatFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thoatToolStripMenuItem;
     }
 }

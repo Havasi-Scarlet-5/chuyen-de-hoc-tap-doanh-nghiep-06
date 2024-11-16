@@ -567,5 +567,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         {
             Program.exportForm.ShowDialog();
         }
+
+        private void ThoatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
