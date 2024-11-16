@@ -8,6 +8,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 {
     public partial class ExportForm : Form
     {
+        private Random randomFloat = new Random();
+
         public ExportForm()
         {
             InitializeComponent();
