@@ -280,14 +280,14 @@
             // 
             this.nguoiDungToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nguoiDungToolStripMenuItem.Image")));
             this.nguoiDungToolStripMenuItem.Name = "nguoiDungToolStripMenuItem";
-            this.nguoiDungToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.nguoiDungToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
             this.nguoiDungToolStripMenuItem.Text = "Người dùng";
             // 
             // giaoDienToolStripMenuItem
             // 
             this.giaoDienToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("giaoDienToolStripMenuItem.Image")));
             this.giaoDienToolStripMenuItem.Name = "giaoDienToolStripMenuItem";
-            this.giaoDienToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.giaoDienToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
             this.giaoDienToolStripMenuItem.Text = "Giao diện";
             // 
             // tabKeHoachDaoTaoTheoKhoa

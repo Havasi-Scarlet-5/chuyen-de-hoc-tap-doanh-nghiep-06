@@ -7,6 +7,10 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 {
     internal static class DatabaseManager
     {
+        // Kết nổi thủ công bằng tay, không sử dụng dataset!
+
+        // Tự thiết lập lại connection string bằng tay
+
         public const string connectionString = "Data Source=DESKTOP-76LF2SC;Initial Catalog=CTDT_CDKTDN;Persist Security Info=True;User ID=sa;Password=1;TrustServerCertificate=True;";
 
         public static SqlConnection connection = null;
@@ -22,11 +26,15 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Có lỗi xảy ra khi đang thực hiện kết nối vào cơ sở dữ liệu!.\n" + e.Message, "KẾT NỐI THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Có lỗi xảy ra khi đang thực hiện kết nối vào cơ sở dữ liệu!.\nVui lòng kiểm tra lại connection string trong mục Globals/DatabaseManager.cs/connectionString.\n" + e.Message, "KẾT NỐI THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Application.Exit();
                 }
             }
         }
+
+        // các phương thức & logic hoàn toàn được xử lý bằng code
+
+        // sắp xếp thông qua #region
 
         #region KHOA
 
