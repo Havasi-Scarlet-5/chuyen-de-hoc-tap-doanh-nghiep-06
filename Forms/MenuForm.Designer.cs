@@ -438,7 +438,7 @@
             // 
             this.keHoachDaoTaoTheoKhoaMonComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keHoachDaoTaoTheoKhoaMonComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keHoachDaoTaoTheoKhoaMonComboBox.ForeColor = System.Drawing.Color.Black;
+            this.keHoachDaoTaoTheoKhoaMonComboBox.ForeColor = System.Drawing.Color.Red;
             this.keHoachDaoTaoTheoKhoaMonComboBox.FormattingEnabled = true;
             this.keHoachDaoTaoTheoKhoaMonComboBox.Location = new System.Drawing.Point(214, 53);
             this.keHoachDaoTaoTheoKhoaMonComboBox.MaxLength = 20;
@@ -450,7 +450,7 @@
             // 
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.ForeColor = System.Drawing.Color.Black;
+            this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.ForeColor = System.Drawing.Color.Red;
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.FormattingEnabled = true;
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.Location = new System.Drawing.Point(214, 3);
             this.keHoachDaoTaoTheoKhoaMaCTDTComboBox.MaxLength = 20;
@@ -526,6 +526,7 @@
             // 
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keHoachDaoTaoTheoKhoaKhoaTextBox.ForeColor = System.Drawing.Color.Red;
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Location = new System.Drawing.Point(214, 103);
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.MaxLength = 50;
             this.keHoachDaoTaoTheoKhoaKhoaTextBox.Name = "keHoachDaoTaoTheoKhoaKhoaTextBox";
@@ -749,7 +750,7 @@
             // 
             this.ctCTDTMonHocComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctCTDTMonHocComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctCTDTMonHocComboBox.ForeColor = System.Drawing.Color.Black;
+            this.ctCTDTMonHocComboBox.ForeColor = System.Drawing.Color.Red;
             this.ctCTDTMonHocComboBox.FormattingEnabled = true;
             this.ctCTDTMonHocComboBox.Location = new System.Drawing.Point(214, 53);
             this.ctCTDTMonHocComboBox.MaxLength = 20;
@@ -761,7 +762,7 @@
             // 
             this.ctCTDTMaCTDTComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctCTDTMaCTDTComboBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctCTDTMaCTDTComboBox.ForeColor = System.Drawing.Color.Black;
+            this.ctCTDTMaCTDTComboBox.ForeColor = System.Drawing.Color.Red;
             this.ctCTDTMaCTDTComboBox.FormattingEnabled = true;
             this.ctCTDTMaCTDTComboBox.Location = new System.Drawing.Point(214, 3);
             this.ctCTDTMaCTDTComboBox.MaxLength = 20;

@@ -439,7 +439,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 ctCTDTMonHocComboBox.SelectedValue = ctCTDTDataGridView.CurrentRow.Cells["MaMon"].Value.ToString();
 
                 ctCTDTHocKyNumericUpDown.Value = ctCTDTDataGridView.CurrentRow.Cells["HocKy"].Value is DBNull
-                    ? 0
+                    ? 1
                     : (int)ctCTDTDataGridView.CurrentRow.Cells["HocKy"].Value;
             }
         }
@@ -524,7 +524,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 keHoachDaoTaoTheoKhoaKhoaTextBox.Text = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["Khoa"].Value.ToString();
 
                 keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Value = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["HocKy"].Value is DBNull
-                    ? 0
+                    ? 1
                     : (int)keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["HocKy"].Value;
 
                 keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Value = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["NamHoc"].Value is DBNull
