@@ -27,7 +27,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             exportForm = new ExportForm();
 
-            Application.Run(menuForm);
+            Application.Run(loginForm);
         }
     }
 }

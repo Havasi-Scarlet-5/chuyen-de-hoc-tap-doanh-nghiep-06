@@ -478,13 +478,23 @@
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Location = new System.Drawing.Point(214, 153);
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Maximum = new decimal(new int[] {
-            9999,
+            2,
+            0,
+            0,
+            0});
+            this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Name = "keHoachDaoTaoTheoKhoaHocKyNumericUpDown";
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Size = new System.Drawing.Size(312, 42);
             this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.TabIndex = 12;
+            this.keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // keHoachDaoTaoTheoKhoaNamHocLabel
             // 
@@ -705,13 +715,23 @@
             this.ctCTDTHocKyNumericUpDown.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctCTDTHocKyNumericUpDown.Location = new System.Drawing.Point(214, 103);
             this.ctCTDTHocKyNumericUpDown.Maximum = new decimal(new int[] {
-            9999,
+            6,
+            0,
+            0,
+            0});
+            this.ctCTDTHocKyNumericUpDown.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.ctCTDTHocKyNumericUpDown.Name = "ctCTDTHocKyNumericUpDown";
             this.ctCTDTHocKyNumericUpDown.Size = new System.Drawing.Size(312, 42);
             this.ctCTDTHocKyNumericUpDown.TabIndex = 11;
+            this.ctCTDTHocKyNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // ctCTDTHocKyLabel
             // 

@@ -36,6 +36,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inChiTietChuongTrinhDaoTaoTab = new System.Windows.Forms.TabPage();
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.inChiTietCTDTInBaoCaoButton = new System.Windows.Forms.Button();
+            this.buttonIconList = new System.Windows.Forms.ImageList(this.components);
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.inChiTietCTDTMaCTDTComboBox = new System.Windows.Forms.ComboBox();
             this.inChiTietCTDTMaCTDTLabel = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inKeHoachDaoTaoTheoKhoaKhoaTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.inKeHoachDaoTaoTheoKhoaKhoaComboBox = new System.Windows.Forms.ComboBox();
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel = new System.Windows.Forms.Label();
-            this.buttonIconList = new System.Windows.Forms.ImageList(this.components);
             this.exportFormTabControl.SuspendLayout();
             this.inChiTietChuongTrinhDaoTaoTab.SuspendLayout();
             this.inChiTietChuongTrinhDaoTaoTableLayoutPanel2.SuspendLayout();
@@ -108,6 +108,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inChiTietCTDTInBaoCaoButton.Text = "IN BÁO CÁO";
             this.inChiTietCTDTInBaoCaoButton.UseVisualStyleBackColor = true;
             this.inChiTietCTDTInBaoCaoButton.Click += new System.EventHandler(this.InChiTietCTDTInBaoCaoButton_Click);
+            // 
+            // buttonIconList
+            // 
+            this.buttonIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("buttonIconList.ImageStream")));
+            this.buttonIconList.TransparentColor = System.Drawing.Color.Transparent;
+            this.buttonIconList.Images.SetKeyName(0, "in_bao_cao.png");
             // 
             // inChiTietChuongTrinhDaoTaoTableLayoutPanel
             // 
@@ -235,12 +241,6 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel.TabIndex = 0;
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel.Text = "Khóa:";
             this.inKeHoachDaoTaoTheoKhoaKhoaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // buttonIconList
-            // 
-            this.buttonIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("buttonIconList.ImageStream")));
-            this.buttonIconList.TransparentColor = System.Drawing.Color.Transparent;
-            this.buttonIconList.Images.SetKeyName(0, "in_bao_cao.png");
             // 
             // ExportForm
             // 
