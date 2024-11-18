@@ -85,11 +85,17 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             return false;
         }
 
-        public static bool SuaKhoa(string maKhoa, string tenKhoa)
+        public static bool SuaKhoa(string maKhoa, string tenKhoa, string keyCheck)
         {
             if (connection == null || maKhoa.Equals(string.Empty) || tenKhoa.Equals(string.Empty))
             {
                 MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (maKhoa != keyCheck)
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -218,11 +224,17 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             return false;
         }
 
-        public static bool SuaNghe(string maNghe, string tenNghe, string maKhoa, string moTa)
+        public static bool SuaNghe(string maNghe, string tenNghe, string maKhoa, string moTa, string keyCheck)
         {
             if (connection == null || maNghe.Equals(string.Empty) || tenNghe.Equals(string.Empty) || maKhoa.Equals(string.Empty) || moTa.Equals(string.Empty))
             {
                 MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (maNghe != keyCheck)
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -425,7 +437,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             int thuongXuyen,
             int dinhKy,
             int thiHetMon,
-            string ghiChu
+            string ghiChu,
+            string keyCheck
         )
         {
             if (
@@ -438,6 +451,12 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             )
             {
                 MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (maMon != keyCheck)
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -599,11 +618,17 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             return false;
         }
 
-        public static bool SuaCTDT(string maCTDT, int namPhatHanh, string moTa)
+        public static bool SuaCTDT(string maCTDT, int namPhatHanh, string moTa, string keyCheck)
         {
             if (connection == null || maCTDT.Equals(string.Empty) || moTa.Equals(string.Empty))
             {
                 MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (maCTDT != keyCheck)
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -744,11 +769,17 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             return false;
         }
 
-        public static bool SuaChiTietCTDT(string maCTDT, string maMon, int hocKy)
+        public static bool SuaChiTietCTDT(string maCTDT, string maMon, int hocKy, string[] keysCheck)
         {
             if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty))
             {
                 MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (maCTDT != keysCheck[0] || maMon != keysCheck[1])
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -924,11 +955,17 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             return false;
         }
 
-        public static bool SuaKeHoachDaoTaoTheoKhoa(string maCTDT, string maMon, string khoa, int hocKy, int namHoc)
+        public static bool SuaKeHoachDaoTaoTheoKhoa(string maCTDT, string maMon, string khoa, int hocKy, int namHoc, string[] keysCheck)
         {
             if (connection == null || maCTDT.Equals(string.Empty) || maMon.Equals(string.Empty) || khoa.Equals(string.Empty))
             {
                 MessageBox.Show("Sửa dữ liệu thất bại!.\nCơ sở dữ liệu chưa kết nối hoặc 1 trong các ô nhập dữ liệu đang để trống.", "THAO TÁC THẤT BẠI!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (maCTDT != keysCheck[0] || maMon != keysCheck[1] || khoa != keysCheck[2])
+            {
+                MessageBox.Show("Sửa dữ liệu thất bại!.\nViệc sửa hoặc xóa dữ liệu cần phụ thuộc vào các ô có thuộc tính khóa nếu thay đổi hoặc chỉnh sửa các ô này sẽ làm thao tác không có hiệu lực.", "THAO TÁC BỊ GIÁN ĐOẠN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace chuyen_de_hoc_tap_doanh_nghiep_06
@@ -61,12 +60,15 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             ngheKhoaComboBox.ValueMember = "MaKhoa";
         }
 
+        private string khoaCurrentSelectedKey = string.Empty;
+
         private void KhoaDataGridView_SelectionChanged(object sender, System.EventArgs e)
         {
             if (khoaDataGridView.CurrentRow != null)
             {
                 maKhoaTextBox.Text = khoaDataGridView.CurrentRow.Cells["MaKhoa"].Value.ToString();
                 tenKhoaTextBox.Text = khoaDataGridView.CurrentRow.Cells["TenKhoa"].Value.ToString();
+                khoaCurrentSelectedKey = maKhoaTextBox.Text;
             }
         }
 
@@ -78,7 +80,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void KhoaSuaButton_Click(object sender, System.EventArgs e)
         {
-            if (DatabaseManager.SuaKhoa(maKhoaTextBox.Text, tenKhoaTextBox.Text))
+            if (DatabaseManager.SuaKhoa(maKhoaTextBox.Text, tenKhoaTextBox.Text, khoaCurrentSelectedKey))
                 UpdateKhoaTable();
         }
 
@@ -121,6 +123,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             monHocNgheComboBox.ValueMember = "MaNghe";
         }
 
+        private string ngheCurrentSelectedKey = string.Empty;
+
         private void NgheDataGridView_SelectionChanged(object sender, System.EventArgs e)
         {
             if (ngheDataGridView.CurrentRow != null)
@@ -132,6 +136,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 ngheMoTaRichTextBox.Text = ngheDataGridView.CurrentRow.Cells["MoTa"].Value.ToString();
 
                 ngheKhoaComboBox.SelectedValue = ngheDataGridView.CurrentRow.Cells["MaKhoa"].Value.ToString();
+
+                ngheCurrentSelectedKey = maNgheTextBox.Text;
             }
         }
 
@@ -147,7 +153,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
         {
             string ngheKhoa = ngheKhoaComboBox.SelectedValue == null ? string.Empty : ngheKhoaComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.SuaNghe(maNgheTextBox.Text, tenNgheTextBox.Text, ngheKhoa, ngheMoTaRichTextBox.Text))
+            if (DatabaseManager.SuaNghe(maNgheTextBox.Text, tenNgheTextBox.Text, ngheKhoa, ngheMoTaRichTextBox.Text, ngheCurrentSelectedKey))
                 UpdateNgheTable();
         }
 
@@ -240,6 +246,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             keHoachDaoTaoTheoKhoaMonComboBox.ValueMember = "MaMon";
         }
 
+        private string monHocCurrentSelectedKey = string.Empty;
+
         private void MonHocDataGridView_SelectionChanged(object sender, System.EventArgs e)
         {
             if (monHocDataGridView.CurrentRow != null)
@@ -283,6 +291,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                     : (int)monHocDataGridView.CurrentRow.Cells["ThiHetMon"].Value;
 
                 monHocGhiChuTextBox.Text = monHocDataGridView.CurrentRow.Cells["GhiChu"].Value.ToString();
+
+                monHocCurrentSelectedKey = monHocMaMonTextBox.Text;
             }
         }
 
@@ -325,7 +335,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 (int)monHocThuongXuyenNumericUpDown.Value,
                 (int)monHocDinhKyNumericUpDown.Value,
                 (int)monHocThiHetMonNumericUpDown.Value,
-                monHocGhiChuTextBox.Text
+                monHocGhiChuTextBox.Text,
+                monHocCurrentSelectedKey
             ))
                 UpdateMonHocTable();
         }
@@ -369,6 +380,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             Program.exportForm.SetInChiTietCTDTData((DataTable)ctdtDataGridView.DataSource);
         }
 
+        private string CTDTCurrentSelectedKey = string.Empty;
+
         private void CtdtDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (ctdtDataGridView.CurrentRow != null)
@@ -380,6 +393,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                     : (int)ctdtDataGridView.CurrentRow.Cells["NamPhatHanh"].Value;
 
                 ctdtMoTaRichTextBox.Text = ctdtDataGridView.CurrentRow.Cells["MoTa"].Value.ToString();
+
+                CTDTCurrentSelectedKey = ctdtMaCTDTTextBox.Text;
             }
         }
 
@@ -391,7 +406,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
         private void CtdtSuaButton_Click(object sender, EventArgs e)
         {
-            if (DatabaseManager.SuaCTDT(ctdtMaCTDTTextBox.Text, (int)ctdtNamPhatHanhNumericUpDown.Value, ctdtMoTaRichTextBox.Text))
+            if (DatabaseManager.SuaCTDT(ctdtMaCTDTTextBox.Text, (int)ctdtNamPhatHanhNumericUpDown.Value, ctdtMoTaRichTextBox.Text, CTDTCurrentSelectedKey))
                 UpdateCTDTTable();
         }
 
@@ -430,6 +445,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             }
         }
 
+        private string[] ctCTDTCurrentSelectedKeys = new string[] { string.Empty, string.Empty };
+
         private void CtCTDTDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (ctCTDTDataGridView.CurrentRow != null)
@@ -441,6 +458,11 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 ctCTDTHocKyNumericUpDown.Value = ctCTDTDataGridView.CurrentRow.Cells["HocKy"].Value is DBNull
                     ? 1
                     : (int)ctCTDTDataGridView.CurrentRow.Cells["HocKy"].Value;
+
+                ctCTDTCurrentSelectedKeys = new string[] {
+                    ctCTDTMaCTDTComboBox.SelectedValue.ToString(),
+                    ctCTDTMonHocComboBox.SelectedValue.ToString()
+                };
             }
         }
 
@@ -460,7 +482,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             string maMon = ctCTDTMonHocComboBox.SelectedValue == null ? string.Empty : ctCTDTMonHocComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.SuaChiTietCTDT(maCTDT, maMon, (int)ctCTDTHocKyNumericUpDown.Value))
+            if (DatabaseManager.SuaChiTietCTDT(maCTDT, maMon, (int)ctCTDTHocKyNumericUpDown.Value, ctCTDTCurrentSelectedKeys))
                 UpdateChiTietCTDTTable();
         }
 
@@ -513,6 +535,8 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
             Program.exportForm.SetInKeHoachDaoTaoTheoKhoaData(DatabaseManager.LayDanhSachKhoaBangKeHoachDaoTaoTheoKhoa());
         }
 
+        private string[] keHoachDaoTaoTheoKhoaCurrentSelectedKeys = new string[] { string.Empty, string.Empty, string.Empty };
+
         private void KeHoachDaoTaoTheoKhoaDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (keHoachDaoTaoTheoKhoaDataGridView.CurrentRow != null)
@@ -530,6 +554,13 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
                 keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Value = keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["NamHoc"].Value is DBNull
                     ? 0
                     : (int)keHoachDaoTaoTheoKhoaDataGridView.CurrentRow.Cells["NamHoc"].Value;
+
+                keHoachDaoTaoTheoKhoaCurrentSelectedKeys = new string[]
+                {
+                    keHoachDaoTaoTheoKhoaMaCTDTComboBox.SelectedValue.ToString(),
+                    keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue.ToString(),
+                    keHoachDaoTaoTheoKhoaKhoaTextBox.Text
+                };
             }
         }
 
@@ -549,7 +580,7 @@ namespace chuyen_de_hoc_tap_doanh_nghiep_06
 
             string maMon = keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue == null ? string.Empty : keHoachDaoTaoTheoKhoaMonComboBox.SelectedValue.ToString();
 
-            if (DatabaseManager.SuaKeHoachDaoTaoTheoKhoa(maCTDT, maMon, keHoachDaoTaoTheoKhoaKhoaTextBox.Text, (int)keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Value, (int)keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Value))
+            if (DatabaseManager.SuaKeHoachDaoTaoTheoKhoa(maCTDT, maMon, keHoachDaoTaoTheoKhoaKhoaTextBox.Text, (int)keHoachDaoTaoTheoKhoaHocKyNumericUpDown.Value, (int)keHoachDaoTaoTheoKhoaNamHocNumericUpDown.Value, keHoachDaoTaoTheoKhoaCurrentSelectedKeys))
                 UpdateKetHoachDaoTaoTheoKhoaTable();
         }
 
